@@ -17,6 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name="br.pl.iJudo.ui.osotogari"></activity>
+        <activity android:name="br.pl.iJudo.ui.ogoshi"></activity>
+        <activity android:name="br.pl.iJudo.ui.deashibarai"></activity>
+        <activity android:name="br.pl.iJudo.ui.ipponseoinage"></activity>
+
     </application>
 
 </manifest>

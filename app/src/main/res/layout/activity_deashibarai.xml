@@ -8,7 +8,7 @@
     <pl.droidsonroids.gif.GifImageView
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:src="@drawable/osotogari"
+        android:src="@drawable/deashibarai"
         android:id="@+id/view"
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
@@ -28,9 +28,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="OSOTO-GARI"
+        android:text="DE-ASHI-BARAI"
         android:id="@+id/textView"
         android:layout_below="@+id/viewStub"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tambem Conhecido como De-Ashi-Harai"
+        android:id="@+id/textView2"
+        android:layout_marginTop="450dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/view"
+        android:layout_alignStart="@+id/view" />
 
 </RelativeLayout>
