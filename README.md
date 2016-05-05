@@ -23,7 +23,7 @@ Google Play
 
 You can get this example on Google Play 
 
-[![Get it on Google Play](http://developer.android.com/images/brand/en_generic_rgb_wo_60.png)](https://play.google.com/store/apps/details?id=mmbialas.pl.navigationdrawersi)
+[![Get it on Google Play](http://developer.android.com/images/brand/en_generic_rgb_wo_60.png)](https://play.google.com/store/apps/details?id=iJudo)
 
 Acknowledgements
 -------
@@ -44,7 +44,7 @@ You can find me on
   <img alt="Follow me on Google+"
        src="https://github.com/mmBs/NavigationDrawerSI/blob/master/images/gplus.png" />
 </a>
-<a href="https://twitter.com/mmbialas" target="_blank">
+<a href="https://twitter.com/br" target="_blank">
   <img alt="Follow me on Twitter"
        src="https://github.com/mmBs/NavigationDrawerSI/blob/master/images/twitter.png" />
 </a>
