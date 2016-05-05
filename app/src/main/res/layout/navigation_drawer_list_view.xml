@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<br.pl.iJudo.ui.navigationdrawer.NavigationDrawerView
+<br.pl.iJudo.ui.ijudo.NavigationDrawerView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         style="@style/Match">
@@ -19,4 +19,4 @@
             android:choiceMode="singleChoice"
             android:divider="@android:color/transparent"/>
 
-</br.pl.iJudo.ui.navigationdrawer.NavigationDrawerView>
+</br.pl.iJudo.ui.ijudo.NavigationDrawerView>
