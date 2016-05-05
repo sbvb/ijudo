@@ -12,6 +12,7 @@ import mmbialas.pl.navigationdrawersi.ui.fragments.FragmentAbout;
 import mmbialas.pl.navigationdrawersi.ui.fragments.FaixaCinza;
 import mmbialas.pl.navigationdrawersi.ui.fragments.FaixaAmarela;
 import mmbialas.pl.navigationdrawersi.ui.fragments.FaixaAzul;
+import mmbialas.pl.navigationdrawersi.ui.fragments.MessagesFragment;
 import mmbialas.pl.navigationdrawersi.ui.fragments.Outros;
 
 /**
@@ -20,7 +21,7 @@ import mmbialas.pl.navigationdrawersi.ui.fragments.Outros;
  */
 public enum Fragments {
 
-    MAIN(mmbialas.pl.navigationdrawersi.ui.fragments.Principal.class), CINZA(FaixaCinza.class), AZUL(FaixaAzul.class), AMARELA(FaixaAmarela.class), LARANJA(FaixaLaranja.class), VERDE(FaixaVerde.class), ROXA(FaixaRoxa.class), MARROM(FaixaMarrom.class), OUTROS(Outros.class),ABOUT(
+    MAIN(mmbialas.pl.navigationdrawersi.ui.fragments.Principal.class), CINZA(FaixaCinza.class), AZUL(FaixaAzul.class), AMARELA(FaixaAmarela.class), LARANJA(FaixaLaranja.class), VERDE(FaixaVerde.class), ROXA(FaixaRoxa.class), MARROM(FaixaMarrom.class),  MESSAGES(MessagesFragment.class), OUTROS(Outros.class),ABOUT(
             FragmentAbout.class);
 
     final Class<? extends Fragment> fragment;

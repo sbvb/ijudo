@@ -1,10 +1,5 @@
 package mmbialas.pl.navigationdrawersi.data.model;
 
-/**
- * Created by Michal Bialas on 19/07/14.
- *
- * @author Michal Bialas
- */
 public class NavigationDrawerItem {
 
     private String itemName;

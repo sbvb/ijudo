@@ -1,44 +1,29 @@
 package mmbialas.pl.navigationdrawersi.ui.fragments;
 
-import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 
-import butterknife.ButterKnife;
-import butterknife.InjectView;
 import mmbialas.pl.navigationdrawersi.R;
 
 /**
- * Created by Michal Bialas on 19/07/14.
+ * Created by yuri on 04/05/16.
  */
-public class FaixaLaranja extends ListFragment {
+public class MessagesFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_laranja, container,
+        View rootView = inflater.inflate(R.layout.fragment_messages, container,
                 false);
 
-        String[] values = new String[] { "Tai-Otoshi" , "Harai-Goshi" , "Okuri-Ashi-Barai" , "Ko-Soto-Gari" , "Ko-Uchi-Gari " , "Koshi-Guruma" };
+        String[] values = new String[] { "Message1", "Message2", "Message3", "Message4", "Message5" };
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1, values);
         setListAdapter(adapter);
         return rootView;
     }
-
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.reset(this);
-    }
-
-
-
 }

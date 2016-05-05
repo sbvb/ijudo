@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,10 +22,16 @@ import butterknife.OnItemClick;
 import mmbialas.pl.navigationdrawersi.R;
 import mmbialas.pl.navigationdrawersi.data.Fragments;
 import mmbialas.pl.navigationdrawersi.data.model.NavigationDrawerItem;
+import mmbialas.pl.navigationdrawersi.ui.fragments.FaixaLaranja;
+import mmbialas.pl.navigationdrawersi.ui.fragments.FaixaMarrom;
+import mmbialas.pl.navigationdrawersi.ui.fragments.FaixaRoxa;
+import mmbialas.pl.navigationdrawersi.ui.fragments.FaixaVerde;
 import mmbialas.pl.navigationdrawersi.ui.fragments.FragmentAbout;
 import mmbialas.pl.navigationdrawersi.ui.fragments.FaixaCinza;
 import mmbialas.pl.navigationdrawersi.ui.fragments.FaixaAzul;
 import mmbialas.pl.navigationdrawersi.ui.fragments.FaixaAmarela;
+import mmbialas.pl.navigationdrawersi.ui.fragments.MessagesFragment;
+import mmbialas.pl.navigationdrawersi.ui.fragments.Outros;
 import mmbialas.pl.navigationdrawersi.ui.navigationdrawer.NavigationDrawerView;
 import timber.log.Timber;
 
@@ -152,7 +159,10 @@ public class MainActivity extends ActionBarActivity {
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         } else if (item.getItemId() == R.id.action_settings) {
-            return true;
+            //return true;
+            Toast.makeText(MainActivity.this,
+                    "Soremadê", Toast.LENGTH_LONG).show();
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -213,7 +223,7 @@ public class MainActivity extends ActionBarActivity {
                 }
                 break;
             case 3:
-                if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaAmarela)) {
+                if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaLaranja)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
                                     .instantiate(MainActivity.this, Fragments.LARANJA.getFragment()))
@@ -221,7 +231,7 @@ public class MainActivity extends ActionBarActivity {
                 }
                 break;
             case 4:
-                if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaAmarela)) {
+                if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaVerde)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
                                     .instantiate(MainActivity.this, Fragments.VERDE.getFragment()))
@@ -229,7 +239,7 @@ public class MainActivity extends ActionBarActivity {
                 }
                 break;
             case 5:
-                if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaAmarela)) {
+                if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaRoxa)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
                                     .instantiate(MainActivity.this, Fragments.ROXA.getFragment()))
@@ -237,7 +247,7 @@ public class MainActivity extends ActionBarActivity {
                 }
                 break;
             case 6:
-                if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaAmarela)) {
+                if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaMarrom)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
                                     .instantiate(MainActivity.this, Fragments.MARROM.getFragment()))
@@ -245,7 +255,7 @@ public class MainActivity extends ActionBarActivity {
                 }
                 break;
             case 7:
-                if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaAmarela)) {
+                if (!(getSupportFragmentManager().getFragments().get(0) instanceof Outros)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
                                     .instantiate(MainActivity.this, Fragments.OUTROS.getFragment()))

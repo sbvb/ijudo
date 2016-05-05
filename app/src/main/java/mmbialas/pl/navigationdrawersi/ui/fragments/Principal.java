@@ -23,9 +23,6 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 import mmbialas.pl.navigationdrawersi.R;
 
-/**
- * Created by Michal Bialas on 19/07/14.
- */
 public class Principal extends Fragment {
 
 
@@ -39,7 +36,7 @@ public class Principal extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup containter,
             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_about, containter, false);
+        View view = inflater.inflate(R.layout.fragment_main, containter, false);
         ButterKnife.inject(this, view);
         setSpans();
         return view;

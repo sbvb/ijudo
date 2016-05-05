@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">iJudô</string>
-    <string name="action_settings">Configurações</string>
+    <string name="action_settings">Sair</string>
 
     <string name="fragment_cinza">Cinza</string>
     <string name="fragment_azul">Azul</string>
@@ -39,6 +39,10 @@
     <string name="about_libraries">Libraries:</string>
     <string name="about_butterknife">ButterKnife by Jake Wharton</string>
     <string name="about_robototextview">RobotoTextView by Evgeny Shishkin</string>
+    <string name="texto_principal">Bem Vindo ao iJudô</string>
+    <string name="texto_principal2">Selecione a Faixa para exibir os Golpes</string>
+    <string name="welcome">Bem Vindo ao iJudô</string>
+
 
     <string name="about_msg_subject">[NavigationDrawerSI]</string>
     <string name="about_mail_chooser">Send with</string>

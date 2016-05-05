@@ -3,9 +3,11 @@ package mmbialas.pl.navigationdrawersi.ui.fragments;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 
 import butterknife.ButterKnife;
@@ -17,7 +19,7 @@ import static mmbialas.pl.navigationdrawersi.R.color.purple_light;
 /**
  * Created by Michal Bialas on 19/07/14.
  */
-public class FaixaRoxa extends Fragment {
+/*public class FaixaRoxa extends Fragment {
 
     @InjectView(R.id.circleLayout)
     LinearLayout circleLayout;
@@ -30,7 +32,24 @@ public class FaixaRoxa extends Fragment {
         ((GradientDrawable) circleLayout.getBackground())
                 .setColor(getResources().getColor(purple_light));
         return view;
+    }*/
+
+public class FaixaRoxa extends ListFragment {
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_roxa, container,
+                false);
+
+        String[] values = new String[] {"Sumi Gaeshi" , "Tani Otoshi" ,  "Hane Makikomi" , "Sukui Nage" , "Utsuri Goshi" ,
+        "O Guruma" , "Soto Maki Komi" , "Uki Otoshi"        };
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_list_item_1, values);
+        setListAdapter(adapter);
+        return rootView;
     }
+
 
     @Override
     public void onDestroyView() {
