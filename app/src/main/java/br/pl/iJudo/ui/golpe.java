@@ -2,20 +2,32 @@ package br.pl.iJudo.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
-
-import br.pl.iJudo.R;
-
+import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class ogoshi extends Activity {
+import br.pl.iJudo.R;
+
+public class golpe extends Activity {
 
     WebView webviewActionView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ogoshi);
+
+        Bundle extras = getIntent().getExtras();
+        String xmlfile = null;
+        if (extras != null) {
+            xmlfile = extras.getString("xmlfile");
+        }
+
+
+        int id = getResources().getIdentifier(xmlfile, "layout", getPackageName());
+        setContentView(id);
+
 
     }
 
