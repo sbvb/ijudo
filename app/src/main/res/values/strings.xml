@@ -48,4 +48,66 @@
     <string name="about_mail_chooser">Send with</string>
     <string name="about_intent_failed">The requested application could not be launched.</string>
     <string name="teste">TESTE</string>
+
+    <string-array name="golpescinza">
+            <item>O-soto-Gari</item>
+            <item>O-Goshi</item>
+    </string-array>
+
+    <string-array name="golpesazul">
+        <item>De-Ashi-Barai</item>
+        <item>Ippon-Seoi-Nage</item>
+    </string-array>
+
+    <string-array name="golpesamarela">
+        <item>Koshi-Guruma</item>
+        <item>Uki-Goshi</item>
+        <item>O-Uchi-Gari</item>
+        <item>Ko-Uchi-Gari</item>
+    </string-array>
+
+    <string-array name="golpeslaranja">
+        <item>Tai-Otoshi</item>
+        <item>Harai-Goshi</item>
+        <item>Okuri-Ashi-Barai</item>
+        <item>Ko-Soto-Gari</item>
+        <item>Ko-Uchi-Gari</item>
+        <item>Koshi-Guruma</item>
+    </string-array>
+
+    <string-array name="golpesverde">
+        <item>Ko-Soto-Gake</item>
+        <item>Sassae-Tsuri-Komi-Ashi</item>
+        <item>Hiza-Guruma</item>
+        <item>ko-Soto-Gari</item>
+        <item>Uchi-Mata</item>
+        <item>Okuri-Ashi-Barai</item>
+        <item>Harai-Goshi</item>
+        <item>Uki-Goshi</item>
+        <item>Hane-Goshi</item>
+        <item>Tsuri-Komi-Goshi</item>
+        <item>Sode-Tsuri-Komi-Goshi</item>
+        <item>Seoi-Nage</item>
+        <item>Tai-OToshi</item>
+        <item>Soto-Makikomi</item>
+    </string-array>
+
+    <string-array name="golpesroxa">
+        <item>Sumi Gaeshi</item>
+        <item>Tani Otoshi</item>
+        <item>Hane Makikomi</item>
+        <item>Sukui Nage</item>
+        <item>Utsuri Goshi</item>
+
+    </string-array>
+
+    <string-array name="golpesmarrom">
+
+    </string-array>
+
+    <string-array name="golpesoutros">
+
+    </string-array>
+
+
 </resources>
