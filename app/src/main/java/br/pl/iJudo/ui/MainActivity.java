@@ -16,6 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.pl.iJudo.ui.fragments.Principal;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnItemClick;
@@ -86,6 +87,7 @@ public class MainActivity extends ActionBarActivity {
         }
 
         navigationItems = new ArrayList<>();
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_nagewaza),R.drawable.ic_action_about, false));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_cinza), R.drawable.ic_cinza, true));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_azul),  R.drawable.ic_azul, true));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_amarela),  R.drawable.ic_amarela, true));
@@ -94,7 +96,7 @@ public class MainActivity extends ActionBarActivity {
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_roxa),  R.drawable.ic_roxa, true));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_marrom), R.drawable.ic_marrom,  true));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_todos), R.drawable.ic_preta, true));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_about),R.drawable.ic_action_about, false));
+        //navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_about),R.drawable.ic_action_about, false));
 
         mNavigationDrawerListViewWrapper.replaceWith(navigationItems);
 
@@ -206,6 +208,15 @@ public class MainActivity extends ActionBarActivity {
     private void onNavigationDrawerItemSelected(int position) {
         switch (position) {
             case 0:
+                if (!(getSupportFragmentManager().getFragments().get(0) instanceof Principal)) {
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.contentFrame, Fragment
+                                    .instantiate(MainActivity.this, Fragments.MAIN.getFragment()))
+                            .commit();
+                }
+                break;
+
+            case 1:
                 if (!(getSupportFragmentManager().getFragments()
                         .get(0) instanceof FaixaCinza)) {
                     getSupportFragmentManager().beginTransaction()
@@ -214,7 +225,7 @@ public class MainActivity extends ActionBarActivity {
                             .commit();
                 }
                 break;
-            case 1:
+            case 2:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaAzul)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
@@ -222,7 +233,7 @@ public class MainActivity extends ActionBarActivity {
                             .commit();
                 }
                 break;
-            case 2:
+            case 3:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaAmarela)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
@@ -230,7 +241,7 @@ public class MainActivity extends ActionBarActivity {
                             .commit();
                 }
                 break;
-            case 3:
+            case 4:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaLaranja)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
@@ -238,7 +249,7 @@ public class MainActivity extends ActionBarActivity {
                             .commit();
                 }
                 break;
-            case 4:
+            case 5:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaVerde)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
@@ -246,7 +257,7 @@ public class MainActivity extends ActionBarActivity {
                             .commit();
                 }
                 break;
-            case 5:
+            case 6:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaRoxa)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
@@ -254,7 +265,7 @@ public class MainActivity extends ActionBarActivity {
                             .commit();
                 }
                 break;
-            case 6:
+            case 7:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaMarrom)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
@@ -262,7 +273,7 @@ public class MainActivity extends ActionBarActivity {
                             .commit();
                 }
                 break;
-            case 7:
+            case 8:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof Todos)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
@@ -270,7 +281,7 @@ public class MainActivity extends ActionBarActivity {
                             .commit();
                 }
                 break;
-            case 8:
+            case 9:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FragmentAbout)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
