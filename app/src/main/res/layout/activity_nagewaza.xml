@@ -44,7 +44,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="16dp"
                 android:layout_toRightOf="@id/drawerUserImage"
-                android:text="iJudô"
+                android:text="Nage-Waza - Técnicas de Projeção"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="@dimen/text_size_medium"/>
