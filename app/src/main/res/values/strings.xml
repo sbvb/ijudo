@@ -2,7 +2,9 @@
 <resources>
 
     <string name="app_name">iJudô</string>
-    <string name="action_settings">Sair</string>
+    <string name="action_sair">Sair</string>
+    <string name="action_about">Sobre</string>
+
 
     <string name="fragment_cinza">Cinza</string>
     <string name="fragment_azul">Azul</string>
@@ -13,6 +15,8 @@
     <string name="fragment_marrom">Marrom</string>
     <string name="fragment_todos">Todos</string>
     <string name="fragment_about">Sobre</string>
+    <string name="fragment_nagewaza">Nage Waza</string>
+
 
     <string name="number1">I</string>
     <string name="number2">II</string>

@@ -157,11 +157,20 @@ public class NageWaza extends ActionBarActivity {
 
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
-        } else if (item.getItemId() == R.id.action_settings) {
+        } else if (item.getItemId() == R.id.action_sair) {
             //return true;
             Toast.makeText(NageWaza.this,
                     "Soremadê", Toast.LENGTH_LONG).show();
             finish();
+        }
+            else if (item.getItemId() == R.id.action_about) {
+
+                if (!(getSupportFragmentManager().getFragments().get(0) instanceof FragmentAbout)) {
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.contentFrame, Fragment
+                                    .instantiate(NageWaza.this, Fragments.ABOUT.getFragment()))
+                            .commit();
+                }
         }
         return super.onOptionsItemSelected(item);
     }

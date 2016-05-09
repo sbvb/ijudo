@@ -56,12 +56,12 @@ public class NavigationDrawerItemView extends RelativeLayout {
         requestLayout();
         if (item.isMainItem()) {
             itemTitleTV.setText(item.getItemName());
-            itemTitleTV.setTextSize(22);
+            itemTitleTV.setTextSize(16);
             itemIconIV.setImageDrawable(getIcon(item.getItemIcon()));
             itemIconIV.setVisibility(View.VISIBLE);
         } else {
             itemTitleTV.setText(item.getItemName());
-            itemTitleTV.setTextSize(14);
+            itemTitleTV.setTextSize(22);
             itemIconIV.setImageDrawable(getIcon(item.getItemIcon()));
             itemIconIV.setVisibility(View.VISIBLE);
             rr.setBackgroundColor(res.getColor(R.color.grey_background));
