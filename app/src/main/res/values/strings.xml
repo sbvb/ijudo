@@ -16,6 +16,10 @@
     <string name="fragment_todos">Todos</string>
     <string name="fragment_about">Sobre</string>
     <string name="fragment_nagewaza">Nage Waza</string>
+    <string name="fragment_osaekomiwaza">Osaekomi Waza</string>
+    <string name="fragment_kansetsuwaza">Kansetsu Waza</string>
+    <string name="fragment_shimewaza">Shime Waza</string>
+
 
 
     <string name="number1">I</string>
@@ -160,8 +164,40 @@
         <item>Yoko-Otoshi</item>
         <item>Ura-Nague</item>
         <item>Uki-Otoshi</item>
+    </string-array>
 
+    <string-array name="osaekomiwaza">
+        <item>Hon-kesa-gatame</item>
+        <item>Makura-kesa-gatame</item>
+        <item>Tate-shiho-gatame</item>
+        <item>Kami-shiho-gatame</item>
+        <item>Kata-Gatame</item>
+        <item>Ushiro-kesa-gatame</item>
+        <item>Yoko-shiho-gatame</item>
+        <item>Kuzure-kesa-gatame</item>
+        <item>Kuzure-yoko-shiho-gatame</item>
+        <item>Ushiro-yoko-shiho-gatame</item>
+    </string-array>
 
+    <string-array name="kansetsuwaza">
+        <item>Ude-hishigi-juji-gatame</item>
+        <item>Ude-hishigi-ude-garame</item>
+        <item>Ude-hishigi-ude-gatame</item>
+        <item>Waki-gatame</item>
+        <item>Hiza-gatame</item>
+        <item>Sankaku-gatame</item>
+    </string-array>
+
+    <string-array name="shimewaza">
+        <item>Hadaka-jime</item>
+        <item>Kataha-jime</item>
+        <item>Nami-juji-jime</item>
+        <item>Okuri-eri-jime</item>
+        <item>Kata-juji-jime</item>
+        <item>Sucomi-jime</item>
+        <item>Egiri-jime</item>
+        <item>Sankaku-jime</item>
+        <item>Gyaku-juji-jime</item>
     </string-array>
 
 

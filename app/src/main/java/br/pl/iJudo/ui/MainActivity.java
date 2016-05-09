@@ -16,7 +16,10 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.pl.iJudo.ui.fragments.KansetsuWaza;
+import br.pl.iJudo.ui.fragments.OsaekomiWaza;
 import br.pl.iJudo.ui.fragments.Principal;
+import br.pl.iJudo.ui.fragments.ShimeWaza;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnItemClick;
@@ -34,13 +37,6 @@ import br.pl.iJudo.ui.fragments.FaixaAmarela;
 import br.pl.iJudo.ui.fragments.Todos;
 import br.pl.iJudo.ui.ijudo.NavigationDrawerView;
 import timber.log.Timber;
-
-/**
- * Created by Michal Bialas on 19/07/14.
- *
- * @author Michal Bialas
- */
-
 
 public class MainActivity extends ActionBarActivity {
 
@@ -68,6 +64,10 @@ public class MainActivity extends ActionBarActivity {
 
     private List<NavigationDrawerItem> navigationItems;
 
+    private boolean naofecha = true;
+
+    private boolean comnaguewaza = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,17 +86,11 @@ public class MainActivity extends ActionBarActivity {
             currentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
         }
 
+
+
         navigationItems = new ArrayList<>();
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_nagewaza),R.drawable.ic_action_about, false));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_cinza), R.drawable.ic_cinza, true));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_azul),  R.drawable.ic_azul, true));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_amarela),  R.drawable.ic_amarela, true));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_laranja),  R.drawable.ic_laranja, true));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_verde), R.drawable.ic_verde,  true));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_roxa),  R.drawable.ic_roxa, true));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_marrom), R.drawable.ic_marrom,  true));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_todos), R.drawable.ic_preta, true));
-        //navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_about),R.drawable.ic_action_about, false));
+
+        populatesemNageWaza();
 
         mNavigationDrawerListViewWrapper.replaceWith(navigationItems);
 
@@ -147,6 +141,39 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
+    public void populateNageWaza () {
+        navigationItems.clear();
+        navigationItems = new ArrayList<>();
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_nagewaza),R.drawable.ic_action_about, false));
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_cinza), R.drawable.ic_cinza, true));
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_azul),  R.drawable.ic_azul, true));
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_amarela),  R.drawable.ic_amarela, true));
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_laranja),  R.drawable.ic_laranja, true));
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_verde), R.drawable.ic_verde,  true));
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_roxa),  R.drawable.ic_roxa, true));
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_marrom), R.drawable.ic_marrom,  true));
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_todos), R.drawable.ic_preta, true));
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_osaekomiwaza),R.drawable.ic_action_about, false));
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_kansetsuwaza),R.drawable.ic_action_about, false));
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_shimewaza),R.drawable.ic_action_about, false));
+
+
+        mNavigationDrawerListViewWrapper.replaceWith(navigationItems);
+
+    }
+
+    public void populatesemNageWaza() {
+        navigationItems.clear();
+        navigationItems = new ArrayList<>();
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_nagewaza),R.drawable.ic_action_about, false));
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_osaekomiwaza),R.drawable.ic_action_about, false));
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_kansetsuwaza),R.drawable.ic_action_about, false));
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_shimewaza),R.drawable.ic_action_about, false));
+
+        mNavigationDrawerListViewWrapper.replaceWith(navigationItems);
+    }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
@@ -180,7 +207,7 @@ public class MainActivity extends ActionBarActivity {
     @OnItemClick(R.id.leftDrawerListView)
     public void OnItemClick(int position, long id) {
         if (mDrawerLayout.isDrawerOpen(mLinearDrawerLayout)) {
-            mDrawerLayout.closeDrawer(mLinearDrawerLayout);
+            //mDrawerLayout.closeDrawer(mLinearDrawerLayout);
             onNavigationDrawerItemSelected(position);
 
             selectItem(position);
@@ -201,18 +228,24 @@ public class MainActivity extends ActionBarActivity {
         }
 
         if (mLinearDrawerLayout != null) {
-            mDrawerLayout.closeDrawer(mLinearDrawerLayout);
+            //mDrawerLayout.closeDrawer(mLinearDrawerLayout);
         }
     }
 
     private void onNavigationDrawerItemSelected(int position) {
-        switch (position) {
+        if (comnaguewaza){
+            switch (position) {
+
             case 0:
-                if (!(getSupportFragmentManager().getFragments().get(0) instanceof Principal)) {
-                    getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.contentFrame, Fragment
-                                    .instantiate(MainActivity.this, Fragments.MAIN.getFragment()))
-                            .commit();
+                if (!comnaguewaza) {
+                    comnaguewaza = true;
+                    populateNageWaza();
+
+                }
+                else {
+                    comnaguewaza = false;
+                    populatesemNageWaza();
+
                 }
                 break;
 
@@ -224,6 +257,7 @@ public class MainActivity extends ActionBarActivity {
                                     .instantiate(MainActivity.this, Fragments.CINZA.getFragment()))
                             .commit();
                 }
+                mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
             case 2:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaAzul)) {
@@ -232,6 +266,8 @@ public class MainActivity extends ActionBarActivity {
                                     .instantiate(MainActivity.this, Fragments.AZUL.getFragment()))
                             .commit();
                 }
+                mDrawerLayout.closeDrawer(mLinearDrawerLayout);
+
                 break;
             case 3:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaAmarela)) {
@@ -240,6 +276,7 @@ public class MainActivity extends ActionBarActivity {
                                     .instantiate(MainActivity.this, Fragments.AMARELA.getFragment()))
                             .commit();
                 }
+                mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
             case 4:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaLaranja)) {
@@ -248,6 +285,7 @@ public class MainActivity extends ActionBarActivity {
                                     .instantiate(MainActivity.this, Fragments.LARANJA.getFragment()))
                             .commit();
                 }
+                mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
             case 5:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaVerde)) {
@@ -256,6 +294,7 @@ public class MainActivity extends ActionBarActivity {
                                     .instantiate(MainActivity.this, Fragments.VERDE.getFragment()))
                             .commit();
                 }
+                mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
             case 6:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaRoxa)) {
@@ -264,6 +303,7 @@ public class MainActivity extends ActionBarActivity {
                                     .instantiate(MainActivity.this, Fragments.ROXA.getFragment()))
                             .commit();
                 }
+                mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
             case 7:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaMarrom)) {
@@ -272,6 +312,7 @@ public class MainActivity extends ActionBarActivity {
                                     .instantiate(MainActivity.this, Fragments.MARROM.getFragment()))
                             .commit();
                 }
+                mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
             case 8:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof Todos)) {
@@ -280,17 +321,90 @@ public class MainActivity extends ActionBarActivity {
                                     .instantiate(MainActivity.this, Fragments.TODOS.getFragment()))
                             .commit();
                 }
+                mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
-            case 9:
-                if (!(getSupportFragmentManager().getFragments().get(0) instanceof FragmentAbout)) {
-                    getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.contentFrame, Fragment
-                                    .instantiate(MainActivity.this, Fragments.ABOUT.getFragment()))
-                            .commit();
-                }
-                break;
+
+                case 9:
+                    if (!(getSupportFragmentManager().getFragments()
+                            .get(0) instanceof OsaekomiWaza)) {
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.contentFrame, Fragment
+                                        .instantiate(MainActivity.this, Fragments.OSAEKOMIWAZA.getFragment()))
+                                .commit();
+                    }
+                    mDrawerLayout.closeDrawer(mLinearDrawerLayout);
+                    break;
+                case 10:
+                    if (!(getSupportFragmentManager().getFragments().get(0) instanceof KansetsuWaza)) {
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.contentFrame, Fragment
+                                        .instantiate(MainActivity.this, Fragments.KANSETSUIWAZA.getFragment()))
+                                .commit();
+                    }
+                    mDrawerLayout.closeDrawer(mLinearDrawerLayout);
+
+                    break;
+                case 11:
+                    if (!(getSupportFragmentManager().getFragments().get(0) instanceof ShimeWaza)) {
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.contentFrame, Fragment
+                                        .instantiate(MainActivity.this, Fragments.SHIMEWAZA.getFragment()))
+                                .commit();
+                    }
+                    mDrawerLayout.closeDrawer(mLinearDrawerLayout);
+                    break;
         }
 
+    }
+
+        else {
+            switch (position) {
+
+                case 0:
+                    if (!comnaguewaza) {
+                        comnaguewaza = true;
+                        populateNageWaza();
+
+                    }
+                    else {
+                        comnaguewaza = false;
+                        populatesemNageWaza();
+
+                    }
+                    break;
+
+                case 1:
+                    if (!(getSupportFragmentManager().getFragments()
+                            .get(0) instanceof OsaekomiWaza)) {
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.contentFrame, Fragment
+                                        .instantiate(MainActivity.this, Fragments.OSAEKOMIWAZA.getFragment()))
+                                .commit();
+                    }
+                    mDrawerLayout.closeDrawer(mLinearDrawerLayout);
+                    break;
+                case 2:
+                    if (!(getSupportFragmentManager().getFragments().get(0) instanceof KansetsuWaza)) {
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.contentFrame, Fragment
+                                        .instantiate(MainActivity.this, Fragments.KANSETSUIWAZA.getFragment()))
+                                .commit();
+                    }
+                    mDrawerLayout.closeDrawer(mLinearDrawerLayout);
+
+                    break;
+                case 3:
+                    if (!(getSupportFragmentManager().getFragments().get(0) instanceof ShimeWaza)) {
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.contentFrame, Fragment
+                                        .instantiate(MainActivity.this, Fragments.SHIMEWAZA.getFragment()))
+                                .commit();
+                    }
+                    mDrawerLayout.closeDrawer(mLinearDrawerLayout);
+                    break;
+
+            }
+        }
     }
 
 }
