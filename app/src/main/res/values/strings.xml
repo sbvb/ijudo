@@ -11,7 +11,7 @@
     <string name="fragment_verde">Verde</string>
     <string name="fragment_roxa">Roxa</string>
     <string name="fragment_marrom">Marrom</string>
-    <string name="fragment_outros">Outros</string>
+    <string name="fragment_todos">Todos</string>
     <string name="fragment_about">Sobre</string>
 
     <string name="number1">I</string>
@@ -111,11 +111,52 @@
         <item>Ura-Nague</item>
         <item>Uki-Otoshi</item>
 
-
-
     </string-array>
 
-    <string-array name="golpesoutros">
+    <string-array name="golpestodos">
+        <item>O-soto-Gari</item>
+        <item>O-Goshi</item>
+        <item>Tsuri-Goshi</item>
+        <item>De-Ashi-Barai</item>
+        <item>Ippon-Seoi-Nage</item>
+        <item>O-Soto-Guruma</item>
+        <item>Koshi-Guruma</item>
+        <item>Uki-Goshi</item>
+        <item>Ouchi-Gari</item>
+        <item>Ko-Uchi-Gari</item>
+        <item>Ashi-Guruma</item>
+        <item>Tai-Otoshi</item>
+        <item>Harai-Goshi</item>
+        <item>Okuri-Ashi-Barai</item>
+        <item>Harai-Tsuri-Komi-Ashi</item>
+        <item>Ko-Soto-Gari</item>
+        <item>O-Guruma</item>
+        <item>Kata-Guruma</item>
+        <item>Ko-Soto-Gake</item>
+        <item>Sassae-Tsuri-Komi-Ashi</item>
+        <item>Hiza-Guruma</item>
+        <item>Uchi-Mata</item>
+        <item>Hane-Goshi</item>
+        <item>Tsuri-Komi-Goshi</item>
+        <item>Sode-Tsuri-Komi-Goshi</item>
+        <item>Morote-Seoi-Nage</item>
+        <item>Soto-Makikomi</item>
+        <item>Sumi-Gaeshi</item>
+        <item>Tani-Otoshi</item>
+        <item>Hane-Makikomi</item>
+        <item>Sukui-Nage</item>
+        <item>Utsuri-Goshi</item>
+        <item>Ushiro-Goshi</item>
+        <item>Uki-Waza</item>
+        <item>Tomoe-Nage</item>
+        <item>Yoko-Tomoe-Nage</item>
+        <item>Yoko-Wakare</item>
+        <item>Yoko-Gake</item>
+        <item>Yoko-Guruma</item>
+        <item>Yoko-Otoshi</item>
+        <item>Ura-Nague</item>
+        <item>Uki-Otoshi</item>
+
 
     </string-array>
 

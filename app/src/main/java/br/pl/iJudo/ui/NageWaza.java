@@ -30,7 +30,7 @@ import br.pl.iJudo.ui.fragments.FragmentAbout;
 import br.pl.iJudo.ui.fragments.FaixaCinza;
 import br.pl.iJudo.ui.fragments.FaixaAzul;
 import br.pl.iJudo.ui.fragments.FaixaAmarela;
-import br.pl.iJudo.ui.fragments.Outros;
+import br.pl.iJudo.ui.fragments.Todos;
 import br.pl.iJudo.ui.ijudo.NavigationDrawerView;
 import timber.log.Timber;
 
@@ -93,7 +93,7 @@ public class NageWaza extends ActionBarActivity {
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_verde), true));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_roxa), true));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_marrom), true));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_outros), true));
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_todos), true));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_about),
                 R.drawable.ic_action_about, false));
 
@@ -254,10 +254,10 @@ public class NageWaza extends ActionBarActivity {
                 }
                 break;
             case 7:
-                if (!(getSupportFragmentManager().getFragments().get(0) instanceof Outros)) {
+                if (!(getSupportFragmentManager().getFragments().get(0) instanceof Todos)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
-                                    .instantiate(NageWaza.this, Fragments.OUTROS.getFragment()))
+                                    .instantiate(NageWaza.this, Fragments.TODOS.getFragment()))
                             .commit();
                 }
                 break;
