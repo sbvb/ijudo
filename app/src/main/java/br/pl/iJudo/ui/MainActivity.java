@@ -157,7 +157,7 @@ public class MainActivity extends ActionBarActivity {
     public void populateNageWaza () {
         navigationItems.clear();
         navigationItems = new ArrayList<>();
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_main),R.drawable.ic_action_about, false));
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_main),R.drawable.ic_home, false));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_nagewaza),R.drawable.ic_a, false));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_cinza), R.drawable.ic_cinza, true));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_azul),  R.drawable.ic_azul, true));
@@ -179,7 +179,7 @@ public class MainActivity extends ActionBarActivity {
     public void populatesemNageWaza() {
         navigationItems.clear();
         navigationItems = new ArrayList<>();
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_main),R.drawable.ic_action_about, false));
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_main),R.drawable.ic_home, false));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_nagewaza),R.drawable.ic_a, false));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_osaekomiwaza),R.drawable.ic_b, false));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_kansetsuwaza),R.drawable.ic_c, false));
