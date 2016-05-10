@@ -1,6 +1,7 @@
 package br.pl.iJudo.ui;
 
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewParent;
+import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -74,7 +77,14 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
         mTitle = mDrawerTitle = getTitle();
+
+        mTitle = "      ";
+
         getSupportActionBar().setIcon(R.drawable.ic_action_ab_transparent);
+        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.mytitle);
+
+
+
 
         Timber.tag("LifeCycles");
         Timber.d("Activity Created");

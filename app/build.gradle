@@ -50,5 +50,6 @@ dependencies {
 
     compile 'com.github.johnkil.android-robototextview:robototextview:2.2.0'
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.+'
+    compile "com.android.support:appcompat-v7:21.0.+"
 
 }
