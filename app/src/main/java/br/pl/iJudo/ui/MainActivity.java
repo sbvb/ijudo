@@ -1,5 +1,6 @@
 package br.pl.iJudo.ui;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewParent;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -75,6 +77,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         ButterKnife.inject(this);
         mTitle = mDrawerTitle = getTitle();
 
@@ -120,6 +123,10 @@ public class MainActivity extends ActionBarActivity {
 
         selectItem(currentSelectedPosition);
 
+
+
+
+
     }
 
 
@@ -150,6 +157,7 @@ public class MainActivity extends ActionBarActivity {
     public void populateNageWaza () {
         navigationItems.clear();
         navigationItems = new ArrayList<>();
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_main),R.drawable.ic_action_about, false));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_nagewaza),R.drawable.ic_a, false));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_cinza), R.drawable.ic_cinza, true));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_azul),  R.drawable.ic_azul, true));
@@ -171,6 +179,7 @@ public class MainActivity extends ActionBarActivity {
     public void populatesemNageWaza() {
         navigationItems.clear();
         navigationItems = new ArrayList<>();
+        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_main),R.drawable.ic_action_about, false));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_nagewaza),R.drawable.ic_a, false));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_osaekomiwaza),R.drawable.ic_b, false));
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_kansetsuwaza),R.drawable.ic_c, false));
@@ -242,7 +251,18 @@ public class MainActivity extends ActionBarActivity {
         if (comnaguewaza){
             switch (position) {
 
-            case 0:
+                case 0:
+                    if (!(getSupportFragmentManager().getFragments()
+                            .get(0) instanceof Principal)) {
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.contentFrame, Fragment
+                                        .instantiate(MainActivity.this, Fragments.MAIN.getFragment()))
+                                .commit();
+                    }
+                    mDrawerLayout.closeDrawer(mLinearDrawerLayout);
+                    break;
+
+                case 1:
                 if (!comnaguewaza) {
                     comnaguewaza = true;
                     populateNageWaza();
@@ -255,7 +275,7 @@ public class MainActivity extends ActionBarActivity {
                 }
                 break;
 
-            case 1:
+            case 2:
                 if (!(getSupportFragmentManager().getFragments()
                         .get(0) instanceof FaixaCinza)) {
                     getSupportFragmentManager().beginTransaction()
@@ -265,7 +285,7 @@ public class MainActivity extends ActionBarActivity {
                 }
                 mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
-            case 2:
+            case 3:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaAzul)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
@@ -275,7 +295,7 @@ public class MainActivity extends ActionBarActivity {
                 mDrawerLayout.closeDrawer(mLinearDrawerLayout);
 
                 break;
-            case 3:
+            case 4:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaAmarela)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
@@ -284,7 +304,7 @@ public class MainActivity extends ActionBarActivity {
                 }
                 mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
-            case 4:
+            case 5:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaLaranja)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
@@ -293,7 +313,7 @@ public class MainActivity extends ActionBarActivity {
                 }
                 mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
-            case 5:
+            case 6:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaVerde)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
@@ -302,7 +322,7 @@ public class MainActivity extends ActionBarActivity {
                 }
                 mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
-            case 6:
+            case 7:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaRoxa)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
@@ -311,7 +331,7 @@ public class MainActivity extends ActionBarActivity {
                 }
                 mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
-            case 7:
+            case 8:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaMarrom)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
@@ -320,7 +340,7 @@ public class MainActivity extends ActionBarActivity {
                 }
                 mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
-            case 8:
+            case 9:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof Todos)) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.contentFrame, Fragment
@@ -330,7 +350,7 @@ public class MainActivity extends ActionBarActivity {
                 mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
 
-                case 9:
+                case 10:
                     if (!(getSupportFragmentManager().getFragments()
                             .get(0) instanceof OsaekomiWaza)) {
                         getSupportFragmentManager().beginTransaction()
@@ -340,7 +360,7 @@ public class MainActivity extends ActionBarActivity {
                     }
                     mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                     break;
-                case 10:
+                case 11:
                     if (!(getSupportFragmentManager().getFragments().get(0) instanceof KansetsuWaza)) {
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.contentFrame, Fragment
@@ -350,7 +370,7 @@ public class MainActivity extends ActionBarActivity {
                     mDrawerLayout.closeDrawer(mLinearDrawerLayout);
 
                     break;
-                case 11:
+                case 12:
                     if (!(getSupportFragmentManager().getFragments().get(0) instanceof ShimeWaza)) {
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.contentFrame, Fragment
@@ -367,6 +387,17 @@ public class MainActivity extends ActionBarActivity {
             switch (position) {
 
                 case 0:
+                    if (!(getSupportFragmentManager().getFragments()
+                            .get(0) instanceof Principal)) {
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.contentFrame, Fragment
+                                        .instantiate(MainActivity.this, Fragments.MAIN.getFragment()))
+                                .commit();
+                    }
+                    mDrawerLayout.closeDrawer(mLinearDrawerLayout);
+                    break;
+
+                case 1:
                     if (!comnaguewaza) {
                         comnaguewaza = true;
                         populateNageWaza();
@@ -379,7 +410,7 @@ public class MainActivity extends ActionBarActivity {
                     }
                     break;
 
-                case 1:
+                case 2:
                     if (!(getSupportFragmentManager().getFragments()
                             .get(0) instanceof OsaekomiWaza)) {
                         getSupportFragmentManager().beginTransaction()
@@ -389,7 +420,7 @@ public class MainActivity extends ActionBarActivity {
                     }
                     mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                     break;
-                case 2:
+                case 3:
                     if (!(getSupportFragmentManager().getFragments().get(0) instanceof KansetsuWaza)) {
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.contentFrame, Fragment
@@ -399,7 +430,7 @@ public class MainActivity extends ActionBarActivity {
                     mDrawerLayout.closeDrawer(mLinearDrawerLayout);
 
                     break;
-                case 3:
+                case 4:
                     if (!(getSupportFragmentManager().getFragments().get(0) instanceof ShimeWaza)) {
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.contentFrame, Fragment

@@ -5,6 +5,7 @@
     <string name="action_sair">Sair</string>
     <string name="action_about">Sobre</string>
 
+    <string name="fragment_main">Início</string>
 
     <string name="fragment_cinza">Cinza</string>
     <string name="fragment_azul">Azul</string>
@@ -19,7 +20,9 @@
     <string name="fragment_osaekomiwaza">Osaekomi Waza</string>
     <string name="fragment_kansetsuwaza">Kansetsu Waza</string>
     <string name="fragment_shimewaza">Shime Waza</string>
-    <string name="blank">vaitomanocu</string>
+    <string name="golpes">Golpes</string>
+    <string name="dicionario">Dicionário de Termos</string>
+    <string name="naosei">Algo Aqui</string>
 
 
     <string name="fragment">Fragment</string>
