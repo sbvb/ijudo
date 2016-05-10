@@ -80,10 +80,9 @@ public class MainActivity extends ActionBarActivity {
 
         mTitle = "      ";
 
+
         getSupportActionBar().setIcon(R.drawable.ic_action_ab_transparent);
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.mytitle);
-
-
 
 
         Timber.tag("LifeCycles");
@@ -95,9 +94,6 @@ public class MainActivity extends ActionBarActivity {
         } else {
             currentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
         }
-
-
-
         navigationItems = new ArrayList<>();
 
         populatesemNageWaza();

@@ -23,7 +23,7 @@
         android:background="@color/background_user_navigation_drawer"
         android:orientation="vertical">
 
-        <RelativeLayout
+        <!--<RelativeLayout                                                                            esse bloco é a parte de cima da barra hamburguer
             android:id="@+id/userDrawerHeader"
             android:layout_width="@dimen/navigation_drawer_width"
             android:layout_height="@dimen/navigation_drawer_personal_data_layout_height">
@@ -34,8 +34,8 @@
                 android:layout_height="40dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="16dp"
-                android:contentDescription="Nage-Waza"
+                android:layout_marginLeft="26dp"
+                android:contentDescription="@string/blank"
                 android:src="@drawable/my_photo_for_drawer"/>
 
             <TextView
@@ -46,12 +46,12 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="16dp"
                 android:layout_toRightOf="@id/drawerUserImage"
-                android:text="iJudô"
+                android:text="@string/app_name"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="@dimen/text_size_medium"/>
 
-        </RelativeLayout>
+        </RelativeLayout>-->
 
 
 

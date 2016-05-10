@@ -19,12 +19,8 @@
     <string name="fragment_osaekomiwaza">Osaekomi Waza</string>
     <string name="fragment_kansetsuwaza">Kansetsu Waza</string>
     <string name="fragment_shimewaza">Shime Waza</string>
+    <string name="blank">vaitomanocu</string>
 
-
-
-    <string name="number1">I</string>
-    <string name="number2">II</string>
-    <string name="number3">III</string>
 
     <string name="fragment">Fragment</string>
 
@@ -55,7 +51,6 @@
     <string name="about_msg_subject">[NavigationDrawerSI]</string>
     <string name="about_mail_chooser">Send with</string>
     <string name="about_intent_failed">The requested application could not be launched.</string>
-    <string name="teste">TESTE</string>
 
     <string-array name="golpescinza">
             <item>O-soto-Gari</item>

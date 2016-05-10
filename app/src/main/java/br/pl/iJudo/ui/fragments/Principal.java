@@ -35,11 +35,11 @@ public class Principal extends Fragment {
             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, containter, false);
         ButterKnife.inject(this, view);
-        setSpans();
+        //setSpans();
         return view;
     }
 
-    @OnClick(R.id.aboutContact)
+    /*@OnClick(R.id.aboutContact)
     public void onClick() {
 
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri
@@ -54,7 +54,7 @@ public class Principal extends Fragment {
                     Toast.LENGTH_LONG).show();
         }
 
-    }
+    }*/
 
     @Override
     public void onDestroyView() {
@@ -62,7 +62,7 @@ public class Principal extends Fragment {
         ButterKnife.reset(this);
     }
 
-    private void setSpans() {
+   /* private void setSpans() {
         final SpannableString text1 = new SpannableString(getString(R.string.about_text));
         final SpannableString text2 = new SpannableString(getString(R.string.about_text2));
         text1.setSpan(new RelativeSizeSpan(1.5f), 23, 31,
@@ -93,6 +93,6 @@ public class Principal extends Fragment {
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
     }
-
+*/
 
 }
