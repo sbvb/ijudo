@@ -13,7 +13,7 @@ import java.util.List;
 import br.pl.iJudo.R;
 import butterknife.ButterKnife;
 
-public abstract class Dicionario extends ListFragment {
+public class Dicionario extends ListFragment {
 
     private String[] values = null;
 
@@ -32,20 +32,7 @@ public abstract class Dicionario extends ListFragment {
         return rootView;
     }
 
-    /*@Override
-    public void onListItemClick (ListView l, View rootView , int position, long id) {
 
-        String textonaposicao;
-        Intent meuGolpe;
-        textonaposicao = values[position];
-        Toast.makeText(getActivity().getApplicationContext(), textonaposicao, Toast.LENGTH_SHORT).show();
-        String nomelimpo;
-        nomelimpo = textonaposicao.toLowerCase().replace(" ", "").replace("-", "");
-        meuGolpe = new Intent(getActivity().getApplicationContext(), golpe.class);
-        meuGolpe.putExtra("xmlfile", nomelimpo);
-        startActivity(meuGolpe);
-
-    }*/
 
     private void sortAscending () {
         List<String> sortedGolpesList = Arrays.asList(values);
