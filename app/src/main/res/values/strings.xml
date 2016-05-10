@@ -180,9 +180,9 @@
     </string-array>
 
     <string-array name="kansetsuwaza">
-        <item>Ude-hishigi-juji-gatame</item>
-        <item>Ude-hishigi-ude-garame</item>
-        <item>Ude-hishigi-ude-gatame</item>
+        <item>Juji-Gatame</item>
+        <item>Ude-Garame</item>
+        <item>Ude-Gatame</item>
         <item>Waki-gatame</item>
         <item>Hiza-gatame</item>
         <item>Sankaku-gatame</item>
@@ -194,8 +194,7 @@
         <item>Nami-juji-jime</item>
         <item>Okuri-eri-jime</item>
         <item>Kata-juji-jime</item>
-        <item>Sucomi-jime</item>
-        <item>Egiri-jime</item>
+        <item>Tsukkomi-jime</item>
         <item>Sankaku-jime</item>
         <item>Gyaku-juji-jime</item>
     </string-array>
