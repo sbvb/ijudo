@@ -30,7 +30,7 @@
             android:text="@string/golpes"
             />
         <Button
-            android:id="@+id/btnFb"
+            android:id="@+id/btnDicionario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -38,7 +38,7 @@
             android:text="@string/dicionario"
             />
         <Button
-            android:id="@+id/btnTwitter"
+            android:id="@+id/btn3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"

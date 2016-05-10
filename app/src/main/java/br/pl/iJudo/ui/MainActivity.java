@@ -1,5 +1,8 @@
 package br.pl.iJudo.ui;
 
+//             mDrawerLayout.openDrawer(mLinearDrawerLayout);    para abrir gaveta
+
+
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -188,6 +191,10 @@ public class MainActivity extends ActionBarActivity {
         mNavigationDrawerListViewWrapper.replaceWith(navigationItems);
     }
 
+    public void drawerToggle () {
+        mDrawerLayout.openDrawer(mLinearDrawerLayout);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -212,8 +219,8 @@ public class MainActivity extends ActionBarActivity {
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.contentFrame, Fragment
                                 .instantiate(MainActivity.this, Fragments.ABOUT.getFragment()))
-                        .commit();
-            }
+                     .commit();
+           }
         }
 
         return super.onOptionsItemSelected(item);
@@ -228,6 +235,7 @@ public class MainActivity extends ActionBarActivity {
             selectItem(position);
         }
     }
+
 
     private void selectItem(int position) {
 

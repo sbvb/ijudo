@@ -1,11 +1,13 @@
 package br.pl.iJudo.ui.fragments;
 
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
@@ -14,8 +16,11 @@ import android.text.style.StyleSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
+import br.pl.iJudo.data.Fragments;
+import br.pl.iJudo.ui.MainActivity;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import br.pl.iJudo.R;
@@ -23,9 +28,7 @@ import br.pl.iJudo.R;
 public class Principal extends Fragment {
 
 
-
-
-    public static Principal newInstance() {
+   public static Principal newInstance() {
         Principal fragmentPrincipal = new Principal();
         return fragmentPrincipal;
     }
@@ -37,30 +40,31 @@ public class Principal extends Fragment {
         ButterKnife.inject(this, view);
         //setSpans();
         return view;
+
     }
 
-    /*@OnClick(R.id.aboutContact)
-    public void onClick() {
 
-        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri
-                .fromParts("mailto", getString(R.string.user_email), null));
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT,
-                getString(R.string.about_msg_subject));
-        try {
-            startActivity(
-                    Intent.createChooser(emailIntent, getString(R.string.about_mail_chooser)));
-        } catch (ActivityNotFoundException exception) {
-            Toast.makeText(getActivity(), getString(R.string.about_intent_failed),
-                    Toast.LENGTH_LONG).show();
-        }
+    @OnClick(R.id.btnGolpes)
+    public void onClickGolpe() {
 
-    }*/
+     }
+
+    @OnClick(R.id.btnDicionario)
+    public void onClickDicionario() {
+        getFragmentManager().beginTransaction()
+                .replace(R.id.contentFrame, Fragment
+                        .instantiate(getActivity().getApplicationContext(), Fragments.DICIONARIO.getFragment()))
+                .commit();
+
+    }
+
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.reset(this);
     }
+
 
    /* private void setSpans() {
         final SpannableString text1 = new SpannableString(getString(R.string.about_text));
