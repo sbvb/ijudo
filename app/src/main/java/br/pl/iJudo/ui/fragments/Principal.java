@@ -1,34 +1,23 @@
 package br.pl.iJudo.ui.fragments;
 
-import android.app.Activity;
-import android.content.ActivityNotFoundException;
-import android.content.Intent;
-import android.graphics.Typeface;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.RelativeSizeSpan;
-import android.text.style.StyleSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
+import br.pl.iJudo.R;
 import br.pl.iJudo.data.Fragments;
 import br.pl.iJudo.ui.MainActivity;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import br.pl.iJudo.R;
 
 public class Principal extends Fragment {
 
 
-   public static Principal newInstance() {
+
+
+    public static Principal newInstance() {
         Principal fragmentPrincipal = new Principal();
         return fragmentPrincipal;
     }
@@ -44,10 +33,14 @@ public class Principal extends Fragment {
     }
 
 
+
     @OnClick(R.id.btnGolpes)
     public void onClickGolpe() {
+        ((MainActivity)getActivity()).drawerToggle();
 
-     }
+    }
+
+
 
     @OnClick(R.id.btnDicionario)
     public void onClickDicionario() {
@@ -57,6 +50,7 @@ public class Principal extends Fragment {
                 .commit();
 
     }
+
 
 
     @Override

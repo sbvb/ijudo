@@ -1,24 +1,19 @@
 package br.pl.iJudo.ui.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 import br.pl.iJudo.R;
-import br.pl.iJudo.ui.golpe;
 import butterknife.ButterKnife;
 
-public class Dicionario extends ListFragment {
+public abstract class Dicionario extends ListFragment {
 
     private String[] values = null;
 

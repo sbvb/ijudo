@@ -3,9 +3,7 @@ package br.pl.iJudo.ui;
 //             mDrawerLayout.openDrawer(mLinearDrawerLayout);    para abrir gaveta
 
 
-import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
@@ -14,9 +12,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewParent;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -24,29 +20,30 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.pl.iJudo.ui.fragments.KansetsuWaza;
-import br.pl.iJudo.ui.fragments.OsaekomiWaza;
-import br.pl.iJudo.ui.fragments.Principal;
-import br.pl.iJudo.ui.fragments.ShimeWaza;
-import butterknife.ButterKnife;
-import butterknife.InjectView;
-import butterknife.OnItemClick;
 import br.pl.iJudo.R;
 import br.pl.iJudo.data.Fragments;
 import br.pl.iJudo.data.model.NavigationDrawerItem;
+import br.pl.iJudo.ui.fragments.FaixaAmarela;
+import br.pl.iJudo.ui.fragments.FaixaAzul;
+import br.pl.iJudo.ui.fragments.FaixaCinza;
 import br.pl.iJudo.ui.fragments.FaixaLaranja;
 import br.pl.iJudo.ui.fragments.FaixaMarrom;
 import br.pl.iJudo.ui.fragments.FaixaRoxa;
 import br.pl.iJudo.ui.fragments.FaixaVerde;
 import br.pl.iJudo.ui.fragments.FragmentAbout;
-import br.pl.iJudo.ui.fragments.FaixaCinza;
-import br.pl.iJudo.ui.fragments.FaixaAzul;
-import br.pl.iJudo.ui.fragments.FaixaAmarela;
+import br.pl.iJudo.ui.fragments.KansetsuWaza;
+import br.pl.iJudo.ui.fragments.OsaekomiWaza;
+import br.pl.iJudo.ui.fragments.Principal;
+import br.pl.iJudo.ui.fragments.ShimeWaza;
 import br.pl.iJudo.ui.fragments.Todos;
 import br.pl.iJudo.ui.ijudo.NavigationDrawerView;
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnItemClick;
 import timber.log.Timber;
 
 public class MainActivity extends ActionBarActivity {
+
 
     private static final String STATE_SELECTED_POSITION = "selected_navigation_drawer_position";
 
@@ -191,9 +188,10 @@ public class MainActivity extends ActionBarActivity {
         mNavigationDrawerListViewWrapper.replaceWith(navigationItems);
     }
 
-    public void drawerToggle () {
+    public void drawerToggle() {
         mDrawerLayout.openDrawer(mLinearDrawerLayout);
-    }
+
+        }
 
 
     @Override
