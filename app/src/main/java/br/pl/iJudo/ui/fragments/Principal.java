@@ -1,6 +1,5 @@
 package br.pl.iJudo.ui.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,7 +9,6 @@ import android.view.ViewGroup;
 import br.pl.iJudo.R;
 import br.pl.iJudo.data.Fragments;
 import br.pl.iJudo.ui.MainActivity;
-import br.pl.iJudo.ui.StateCapitalsActivity;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -46,12 +44,12 @@ public class Principal extends Fragment {
 
     @OnClick(R.id.btnDicionario)
     public void onClickDicionario() {
-        //getFragmentManager().beginTransaction()
-          //      .replace(R.id.contentFrame, Fragment
-            //            .instantiate(getActivity().getApplicationContext(), Fragments.DICIONARIO.getFragment()))
-              //  .commit();
-        Intent intent = new Intent(getActivity(), StateCapitalsActivity.class);
-        startActivity(intent);
+        getFragmentManager().beginTransaction()
+                .replace(R.id.contentFrame, Fragment
+                        .instantiate(getActivity().getApplicationContext(), Fragments.DICIONARIO.getFragment()))
+                .commit();
+        //Intent intent = new Intent(getActivity(), StateCapitalsActivity.class);
+        //startActivity(intent);
 
     }
 
