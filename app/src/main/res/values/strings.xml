@@ -31,18 +31,18 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="user_name">Yuri Vidal</string>
-    <string name="user_email">yurividal@gmail.com</string>
+    <string name="user_email">yurividal+ijudo@gmail.com</string>
 
     <string name="select_faixa">Selecione a Faixa</string>
 
     <string name="content_description">image view</string>
 
 
-    <string name="about_text">This application is an example of a Navigation Drawer implementation using a new/bind pattern and the ButterKnife library.</string>
-    <string name="about_text2">It was written only for development purposes.</string>
+    <string name="about_text">Este aplicativo foi desenvolvido para auxiliar alunos de Judô no treinamento de técnicas e golpes.</string>
+    <string name="about_text2">Para sugestôes e bugs, contacte o autor.</string>
 
-    <string name="about_author">Author: Michal Bialas</string>
-    <string name="about_contact">Contact: mmbialas@gmail.com</string>
+    <string name="about_author" translatable="false">Autor: Yuri Vidal</string>
+    <string name="about_contact">Contato: yurividal+ijudo@gmail.com</string>
     <string name="about_libraries">Libraries:</string>
     <string name="about_butterknife">ButterKnife by Jake Wharton</string>
     <string name="about_robototextview">RobotoTextView by Evgeny Shishkin</string>

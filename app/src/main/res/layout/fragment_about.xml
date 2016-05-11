@@ -18,6 +18,23 @@
                 android:id="@+id/aboutTextViewAdditionalText"
                 app:typeface="roboto_light"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="roboto"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/about_text"
+            android:id="@+id/about"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/about_text2"
+            android:id="@+id/about"
+            />
+
         <com.devspark.robototextview.widget.RobotoTextView
                 style="@style/Wrap"
                 android:id="@+id/aboutAuthor"

@@ -48,7 +48,7 @@ public class FragmentAbout extends Fragment {
             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_about, containter, false);
         ButterKnife.inject(this, view);
-        setSpans();
+        //setSpans();
         return view;
     }
 
@@ -75,7 +75,7 @@ public class FragmentAbout extends Fragment {
         ButterKnife.reset(this);
     }
 
-    private void setSpans() {
+    /*private void setSpans() {
         final SpannableString text1 = new SpannableString(getString(R.string.about_text));
         final SpannableString text2 = new SpannableString(getString(R.string.about_text2));
         text1.setSpan(new RelativeSizeSpan(1.5f), 23, 31,
@@ -106,7 +106,7 @@ public class FragmentAbout extends Fragment {
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         aboutTextView.setText(text1);
         aboutTextViewAdditionalText.setText(text2);
-    }
+    }*/
 
 
 }
