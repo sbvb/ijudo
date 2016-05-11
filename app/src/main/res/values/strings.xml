@@ -55,6 +55,8 @@
     <string name="about_mail_chooser">Send with</string>
     <string name="about_intent_failed">The requested application could not be launched.</string>
 
+    <string name="hello">Hello World, StateCapitalsActivity!</string>
+
     <string-array name="golpescinza">
             <item>O-soto-Gari</item>
             <item>O-Goshi</item>
