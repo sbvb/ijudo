@@ -3,10 +3,13 @@ package br.pl.iJudo.ui.fragments;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,6 +35,8 @@ public class Dicionario extends ListFragment {
             View rootView = inflater.inflate(R.layout.activity_statecapitals, container,
                     false);
 
+
+
             //setContentView(R.layout.activity_statecapitals);
 
            Arrays.sort(StatesAndCapitals, new ColumnComparator(0));
@@ -40,6 +45,7 @@ public class Dicionario extends ListFragment {
             //HashMap links each line of data to the correct TextView
 
             HashMap<String,String> item;
+
             for(int i=0;i<StatesAndCapitals.length;i++){
                 item = new HashMap<String,String>();
                 item.put( "line1", StatesAndCapitals[i][0]);
@@ -271,6 +277,7 @@ public class Dicionario extends ListFragment {
 
 
                 };
+
 
 
 
