@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -17,7 +18,6 @@ import android.view.View;
 import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -157,6 +157,33 @@ public class MainActivity extends ActionBarActivity {
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
+    @Override
+    public void onBackPressed() {
+        if(getSupportFragmentManager().getFragments()
+                .get(0) instanceof Principal && mDrawerLayout.isDrawerOpen(mLinearDrawerLayout)) {
+            mDrawerLayout.closeDrawer(mLinearDrawerLayout);
+            //FragmentManager.popBackStack();
+            Log.d("myTag", "DETECTEI BACK BUTTON NO PRINCIPAL, VOU FECHAR GAVETA");
+
+        }
+
+        else if (getSupportFragmentManager().getFragments()
+                    .get(0) instanceof Principal) {
+                super.onBackPressed();
+                Log.d("myTag", "DETECTEI BACK BUTTON NO PRINCIPAL, VOU SAIR");
+            }
+
+        else {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.contentFrame, Fragment
+                            .instantiate(MainActivity.this, Fragments.MAIN.getFragment()))
+                    .commit();
+            Log.d("myTag", "DETECTEI BACK BUTTON FORA DO PRINCIPAL, VOU VOLTAR PRO PRINCIPAL");
+
+        }
+
+
+    }
 
 
 

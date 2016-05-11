@@ -65,11 +65,11 @@ public class Dicionario extends ListFragment {
         }
 
         private String[][] StatesAndCapitals =
-                {{"DOJÔ","Academia (Salão de Concentração)"},
+                {{"DOJÔ","Academia (Area de Treinamento)"},
                         {"JÔ-SEKI","Lugar onde se sentam as autoridades (ao lado do altar)"},
                         {"REI-HÔ","Saudação ( Maneira de Cumprimento)"},
                         {"REI","Cumprimento"},
-                        {"MOKUSÔ","Meditação (Fechar os olhos e manter  silêncio)"},
+                        {"MOKUSO","Meditação (Fechar os olhos e manter  silêncio)"},
                         {"ZA-REI","Cumprimento ajoelhado"},
                         {"RITSU-REI","Cumprimento em pé"},
                         {"SHI-HAN","Mestre"},
@@ -273,13 +273,14 @@ public class Dicionario extends ListFragment {
                         {"WIKI","Puchada"},
                         {"SHIBORI","Apertar (torcer)"},
                         {"SEISHIN","Espírito"},
-                        {"SHIN-SHIN","Espírito e Físico (corpo)"}
-
+                        {"SHIN-SHIN","Espírito e Físico (corpo)"},
+                        {"MATE" , "Parar"},
+                        {"KIOTSUKE","Atenção"},
+                        {"SHOMEN NI", "Virem-se de frente para a parte frontal do Dojo"},
+                        {"SENSEI NI", "Virem-se de frente para o Sensei"},
+                        {"SHOMEN","Jigoro Kano"}
 
                 };
-
-
-
 
 
 
