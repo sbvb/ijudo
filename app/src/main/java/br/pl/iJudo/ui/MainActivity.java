@@ -7,8 +7,6 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -106,7 +104,7 @@ public class MainActivity extends ActionBarActivity {
         }
         navigationItems = new ArrayList<>();
 
-        if (!comnaguewaza) {populatesemNageWaza();}
+        populatesemNageWaza();
 
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
                 R.drawable.ic_navigation_drawer, R.string.navigation_drawer_open,
@@ -194,9 +192,7 @@ public class MainActivity extends ActionBarActivity {
 
 
     public void populateNageWaza() {
-        if (comnaguewaza) {
             navigationItems.clear();
-            Log.d("myTag", "Limpei a Gaveta pra Botar com nagewaza");
             navigationItems = new ArrayList<>();
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_main), R.drawable.ic_home, false));
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_nagewaza), R.drawable.ic_a, false));
@@ -211,23 +207,17 @@ public class MainActivity extends ActionBarActivity {
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_osaekomiwaza), R.drawable.ic_b, false));
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_kansetsuwaza), R.drawable.ic_c, false));
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_shimewaza), R.drawable.ic_d, false));
-            int n = navigationItems.size();
+
             mNavigationDrawerListViewWrapper.replaceWith(navigationItems);
-            Log.d("myTag", "tamanho = " + String.valueOf(n));
-        }
-            else  {Log.d("myTag", "entrei no naguewaza e nao fiz nada"); }
+
+
 
     }
 
 
 
     public void populatesemNageWaza() {
-        if (true) {
-            Log.d("myTag", "entrei no populate sem");
-            comnaguewaza =  false;             Log.d("myTag", "botei comnagewaza pra false");
-
             navigationItems.clear();
-            Log.d("myTag", "Limpei a Gaveta pra botar sem nagewaza");
             navigationItems = new ArrayList<>();
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_main), R.drawable.ic_home, false));
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_nagewaza), R.drawable.ic_a, false));
@@ -236,14 +226,6 @@ public class MainActivity extends ActionBarActivity {
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_shimewaza), R.drawable.ic_d, false));
 
             mNavigationDrawerListViewWrapper.replaceWith(navigationItems);
-            Log.d("myTag", "Populei a gaveta com 5 items");
-            int n = navigationItems.size();
-            Log.d("myTag", "tamanho = " + String.valueOf(n));
-        }
-
-        else  {Log.d("myTag", "entrei no semnaguewaza e nao fiz nada"); }
-
-
 
     }
 
@@ -302,9 +284,10 @@ public class MainActivity extends ActionBarActivity {
                 navigationItems.get(currentSelectedPosition).setSelected(false);
                 navigationItems.get(position).setSelected(true);
 
-                currentSelectedPosition = position;
-                getSupportActionBar()
-                        .setTitle(navigationItems.get(currentSelectedPosition).getItemName());   //set o titulo da janela !!!
+                //currentSelectedPosition = position;
+                //getSupportActionBar()
+                      //  .setTitle(navigationItems.get(currentSelectedPosition).getItemName());
+
 
         }
 
@@ -326,6 +309,7 @@ public class MainActivity extends ActionBarActivity {
                                 .commit();
                     }
                     mDrawerLayout.closeDrawer(mLinearDrawerLayout);
+                    getSupportActionBar().setTitle(R.string.fragment_main);//set o titulo da janela !!!
                     break;
 
                 case 1:
@@ -333,13 +317,15 @@ public class MainActivity extends ActionBarActivity {
                     comnaguewaza = true; Log.d("myTag","acabei de setar para true na option1");
                     populateNageWaza();
                     Log.d("myTag", "option1");
+                    getSupportActionBar().setTitle("Nage-Waza");//set o titulo da janela !!!
+
 
 
                 }
                 else {
-                    //comnaguewaza = false;  Log.d("myTag","acabei de setar para false na option2");
+                    comnaguewaza = false;  Log.d("myTag","acabei de setar para false na option2");
                     populatesemNageWaza();
-                    Log.d("myTag", "option2");
+                    getSupportActionBar().setTitle("Nague-Waza");//set o titulo da janela !!!
 
 
                 }
@@ -354,6 +340,8 @@ public class MainActivity extends ActionBarActivity {
                             .commit();
                 }
                 mDrawerLayout.closeDrawer(mLinearDrawerLayout);
+                getSupportActionBar().setTitle(R.string.fragment_cinza);//set o titulo da janela !!!
+
                 break;
             case 3:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaAzul)) {
@@ -362,6 +350,7 @@ public class MainActivity extends ActionBarActivity {
                                     .instantiate(MainActivity.this, Fragments.AZUL.getFragment()))
                             .commit();
                 }
+                getSupportActionBar().setTitle(R.string.fragment_azul);//set o titulo da janela !!!
                 mDrawerLayout.closeDrawer(mLinearDrawerLayout);
 
                 break;
@@ -372,6 +361,7 @@ public class MainActivity extends ActionBarActivity {
                                     .instantiate(MainActivity.this, Fragments.AMARELA.getFragment()))
                             .commit();
                 }
+                getSupportActionBar().setTitle(R.string.fragment_amarela);//set o titulo da janela !!!
                 mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
             case 5:
@@ -381,6 +371,7 @@ public class MainActivity extends ActionBarActivity {
                                     .instantiate(MainActivity.this, Fragments.LARANJA.getFragment()))
                             .commit();
                 }
+                getSupportActionBar().setTitle(R.string.fragment_laranja);//set o titulo da janela !!!
                 mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
             case 6:
@@ -390,6 +381,8 @@ public class MainActivity extends ActionBarActivity {
                                     .instantiate(MainActivity.this, Fragments.VERDE.getFragment()))
                             .commit();
                 }
+                getSupportActionBar().setTitle(R.string.fragment_verde);//set o titulo da janela !!!
+
                 mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
             case 7:
@@ -399,11 +392,9 @@ public class MainActivity extends ActionBarActivity {
                                     .instantiate(MainActivity.this, Fragments.ROXA.getFragment()))
                             .commit();
                 }
-                Log.d("myTag","clicou na faixa roxa");
+                getSupportActionBar().setTitle(R.string.fragment_roxa);//set o titulo da janela !!!
+
                 mDrawerLayout.closeDrawer(mLinearDrawerLayout);
-                Log.d("myTag","fechei a gaveta");
-                comnaguewaza = true; Log.d("myTag","setei com naguewaza pra true dentro da roxa");
-                positionnew = position-4;
                 break;
             case 8:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaMarrom)) {
@@ -412,6 +403,8 @@ public class MainActivity extends ActionBarActivity {
                                     .instantiate(MainActivity.this, Fragments.MARROM.getFragment()))
                             .commit();
                 }
+                getSupportActionBar().setTitle(R.string.fragment_marrom);//set o titulo da janela !!!
+
                 mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
             case 9:
@@ -421,6 +414,8 @@ public class MainActivity extends ActionBarActivity {
                                     .instantiate(MainActivity.this, Fragments.TODOS.getFragment()))
                             .commit();
                 }
+                getSupportActionBar().setTitle(R.string.fragment_todos);//set o titulo da janela !!!
+
                 mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                 break;
 
@@ -432,7 +427,10 @@ public class MainActivity extends ActionBarActivity {
                                         .instantiate(MainActivity.this, Fragments.OSAEKOMIWAZA.getFragment()))
                                 .commit();
                     }
+                    getSupportActionBar().setTitle(R.string.fragment_osaekomiwaza);//set o titulo da janela !!!
+
                     mDrawerLayout.closeDrawer(mLinearDrawerLayout);
+
                     break;
                 case 11:
                     if (!(getSupportFragmentManager().getFragments().get(0) instanceof KansetsuWaza)) {
@@ -441,6 +439,8 @@ public class MainActivity extends ActionBarActivity {
                                         .instantiate(MainActivity.this, Fragments.KANSETSUIWAZA.getFragment()))
                                 .commit();
                     }
+                    getSupportActionBar().setTitle(R.string.fragment_kansetsuwaza);//set o titulo da janela !!!
+
                     mDrawerLayout.closeDrawer(mLinearDrawerLayout);
 
                     break;
@@ -451,6 +451,8 @@ public class MainActivity extends ActionBarActivity {
                                         .instantiate(MainActivity.this, Fragments.SHIMEWAZA.getFragment()))
                                 .commit();
                     }
+                    getSupportActionBar().setTitle(R.string.fragment_shimewaza);//set o titulo da janela !!!
+
                     mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                     break;
         }
@@ -468,12 +470,16 @@ public class MainActivity extends ActionBarActivity {
                                         .instantiate(MainActivity.this, Fragments.MAIN.getFragment()))
                                 .commit();
                     }
+                    getSupportActionBar().setTitle(R.string.fragment_main);//set o titulo da janela !!!
+
                     mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                     break;
 
                 case 1:
                     if (!comnaguewaza) {
                         comnaguewaza = true; Log.d("myTag","acabei de setar para true na option3");
+                        getSupportActionBar().setTitle(R.string.fragment_nagewaza);//set o titulo da janela !!!
+
                         Log.d("myTag", "option3");
                         populateNageWaza();
 
@@ -481,6 +487,8 @@ public class MainActivity extends ActionBarActivity {
                     }
                     else {
                         comnaguewaza = false; Log.d("myTag","acabei de setar para false na option 4");
+                        getSupportActionBar().setTitle(R.string.fragment_nagewaza);//set o titulo da janela !!!
+
                         populatesemNageWaza();
                         Log.d("myTag", "option4");
 
@@ -496,6 +504,8 @@ public class MainActivity extends ActionBarActivity {
                                         .instantiate(MainActivity.this, Fragments.OSAEKOMIWAZA.getFragment()))
                                 .commit();
                     }
+                    getSupportActionBar().setTitle(R.string.fragment_osaekomiwaza);//set o titulo da janela !!!
+
                     mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                     break;
                 case 3:
@@ -505,6 +515,8 @@ public class MainActivity extends ActionBarActivity {
                                         .instantiate(MainActivity.this, Fragments.KANSETSUIWAZA.getFragment()))
                                 .commit();
                     }
+                    getSupportActionBar().setTitle(R.string.fragment_kansetsuwaza);//set o titulo da janela !!!
+
                     mDrawerLayout.closeDrawer(mLinearDrawerLayout);
 
                     break;
@@ -515,6 +527,8 @@ public class MainActivity extends ActionBarActivity {
                                         .instantiate(MainActivity.this, Fragments.SHIMEWAZA.getFragment()))
                                 .commit();
                     }
+                    getSupportActionBar().setTitle(R.string.fragment_shimewaza);//set o titulo da janela !!!
+
                     mDrawerLayout.closeDrawer(mLinearDrawerLayout);
                     break;
 
