@@ -74,7 +74,9 @@ public class MainActivity extends ActionBarActivity {
 
     private boolean naofecha = true;
 
-    private boolean comnaguewaza = false;
+    private boolean comnaguewaza;
+
+    private int positionnew;
 
 
     @Override
@@ -87,6 +89,7 @@ public class MainActivity extends ActionBarActivity {
 
         mTitle = "      ";
 
+        comnaguewaza = false; Log.d("myTag","acabei de setar comnaguezawa para falso");
 
         getSupportActionBar().setIcon(R.drawable.ic_action_ab_transparent);
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.mytitle);
@@ -103,9 +106,7 @@ public class MainActivity extends ActionBarActivity {
         }
         navigationItems = new ArrayList<>();
 
-        populatesemNageWaza();
-
-        mNavigationDrawerListViewWrapper.replaceWith(navigationItems);
+        if (!comnaguewaza) {populatesemNageWaza();}
 
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
                 R.drawable.ic_navigation_drawer, R.string.navigation_drawer_open,
@@ -178,6 +179,9 @@ public class MainActivity extends ActionBarActivity {
                     .replace(R.id.contentFrame, Fragment
                             .instantiate(MainActivity.this, Fragments.MAIN.getFragment()))
                     .commit();
+            getSupportActionBar()
+                    .setTitle(navigationItems.get(0).getItemName());
+
             Log.d("myTag", "DETECTEI BACK BUTTON FORA DO PRINCIPAL, VOU VOLTAR PRO PRINCIPAL");
 
         }
@@ -187,38 +191,60 @@ public class MainActivity extends ActionBarActivity {
 
 
 
-    public void populateNageWaza () {
-        navigationItems.clear();
-        navigationItems = new ArrayList<>();
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_main),R.drawable.ic_home, false));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_nagewaza),R.drawable.ic_a, false));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_cinza), R.drawable.ic_cinza, true));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_azul),  R.drawable.ic_azul, true));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_amarela),  R.drawable.ic_amarela, true));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_laranja),  R.drawable.ic_laranja, true));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_verde), R.drawable.ic_verde,  true));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_roxa),  R.drawable.ic_roxa, true));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_marrom), R.drawable.ic_marrom,  true));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_todos), R.drawable.ic_preta, true));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_osaekomiwaza),R.drawable.ic_b, false));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_kansetsuwaza),R.drawable.ic_c, false));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_shimewaza),R.drawable.ic_d, false));
 
 
-        mNavigationDrawerListViewWrapper.replaceWith(navigationItems);
+    public void populateNageWaza() {
+        if (comnaguewaza) {
+            navigationItems.clear();
+            Log.d("myTag", "Limpei a Gaveta pra Botar com nagewaza");
+            navigationItems = new ArrayList<>();
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_main), R.drawable.ic_home, false));
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_nagewaza), R.drawable.ic_a, false));
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_cinza), R.drawable.ic_cinza, true));
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_azul), R.drawable.ic_azul, true));
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_amarela), R.drawable.ic_amarela, true));
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_laranja), R.drawable.ic_laranja, true));
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_verde), R.drawable.ic_verde, true));
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_roxa), R.drawable.ic_roxa, true));
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_marrom), R.drawable.ic_marrom, true));
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_todos), R.drawable.ic_preta, true));
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_osaekomiwaza), R.drawable.ic_b, false));
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_kansetsuwaza), R.drawable.ic_c, false));
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_shimewaza), R.drawable.ic_d, false));
+            int n = navigationItems.size();
+            mNavigationDrawerListViewWrapper.replaceWith(navigationItems);
+            Log.d("myTag", "tamanho = " + String.valueOf(n));
+        }
+            else  {Log.d("myTag", "entrei no naguewaza e nao fiz nada"); }
 
     }
 
-    public void populatesemNageWaza() {
-        navigationItems.clear();
-        navigationItems = new ArrayList<>();
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_main),R.drawable.ic_home, false));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_nagewaza),R.drawable.ic_a, false));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_osaekomiwaza),R.drawable.ic_b, false));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_kansetsuwaza),R.drawable.ic_c, false));
-        navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_shimewaza),R.drawable.ic_d, false));
 
-        mNavigationDrawerListViewWrapper.replaceWith(navigationItems);
+
+    public void populatesemNageWaza() {
+        if (true) {
+            Log.d("myTag", "entrei no populate sem");
+            comnaguewaza =  false;             Log.d("myTag", "botei comnagewaza pra false");
+
+            navigationItems.clear();
+            Log.d("myTag", "Limpei a Gaveta pra botar sem nagewaza");
+            navigationItems = new ArrayList<>();
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_main), R.drawable.ic_home, false));
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_nagewaza), R.drawable.ic_a, false));
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_osaekomiwaza), R.drawable.ic_b, false));
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_kansetsuwaza), R.drawable.ic_c, false));
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_shimewaza), R.drawable.ic_d, false));
+
+            mNavigationDrawerListViewWrapper.replaceWith(navigationItems);
+            Log.d("myTag", "Populei a gaveta com 5 items");
+            int n = navigationItems.size();
+            Log.d("myTag", "tamanho = " + String.valueOf(n));
+        }
+
+        else  {Log.d("myTag", "entrei no semnaguewaza e nao fiz nada"); }
+
+
+
     }
 
     public void drawerToggle() {
@@ -262,7 +288,6 @@ public class MainActivity extends ActionBarActivity {
         if (mDrawerLayout.isDrawerOpen(mLinearDrawerLayout)) {
             //mDrawerLayout.closeDrawer(mLinearDrawerLayout);
             onNavigationDrawerItemSelected(position);
-
             selectItem(position);
         }
     }
@@ -271,14 +296,16 @@ public class MainActivity extends ActionBarActivity {
     private void selectItem(int position) {
 
         if (leftDrawerListView != null) {
-            leftDrawerListView.setItemChecked(position, true);
 
-            navigationItems.get(currentSelectedPosition).setSelected(false);
-            navigationItems.get(position).setSelected(true);
+                leftDrawerListView.setItemChecked(position, true);
 
-            currentSelectedPosition = position;
-            getSupportActionBar()
-                    .setTitle(navigationItems.get(currentSelectedPosition).getItemName());
+                navigationItems.get(currentSelectedPosition).setSelected(false);
+                navigationItems.get(position).setSelected(true);
+
+                currentSelectedPosition = position;
+                getSupportActionBar()
+                        .setTitle(navigationItems.get(currentSelectedPosition).getItemName());   //set o titulo da janela !!!
+
         }
 
         if (mLinearDrawerLayout != null) {
@@ -303,13 +330,17 @@ public class MainActivity extends ActionBarActivity {
 
                 case 1:
                 if (!comnaguewaza) {
-                    comnaguewaza = true;
+                    comnaguewaza = true; Log.d("myTag","acabei de setar para true na option1");
                     populateNageWaza();
+                    Log.d("myTag", "option1");
+
 
                 }
                 else {
-                    comnaguewaza = false;
+                    //comnaguewaza = false;  Log.d("myTag","acabei de setar para false na option2");
                     populatesemNageWaza();
+                    Log.d("myTag", "option2");
+
 
                 }
                 break;
@@ -368,7 +399,11 @@ public class MainActivity extends ActionBarActivity {
                                     .instantiate(MainActivity.this, Fragments.ROXA.getFragment()))
                             .commit();
                 }
+                Log.d("myTag","clicou na faixa roxa");
                 mDrawerLayout.closeDrawer(mLinearDrawerLayout);
+                Log.d("myTag","fechei a gaveta");
+                comnaguewaza = true; Log.d("myTag","setei com naguewaza pra true dentro da roxa");
+                positionnew = position-4;
                 break;
             case 8:
                 if (!(getSupportFragmentManager().getFragments().get(0) instanceof FaixaMarrom)) {
@@ -438,13 +473,17 @@ public class MainActivity extends ActionBarActivity {
 
                 case 1:
                     if (!comnaguewaza) {
-                        comnaguewaza = true;
+                        comnaguewaza = true; Log.d("myTag","acabei de setar para true na option3");
+                        Log.d("myTag", "option3");
                         populateNageWaza();
+
 
                     }
                     else {
-                        comnaguewaza = false;
+                        comnaguewaza = false; Log.d("myTag","acabei de setar para false na option 4");
                         populatesemNageWaza();
+                        Log.d("myTag", "option4");
+
 
                     }
                     break;

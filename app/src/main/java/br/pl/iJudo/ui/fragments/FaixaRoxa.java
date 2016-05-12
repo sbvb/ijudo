@@ -14,6 +14,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import br.pl.iJudo.ui.MainActivity;
 import br.pl.iJudo.ui.golpe;
 import butterknife.ButterKnife;
 import br.pl.iJudo.R;
@@ -33,6 +34,7 @@ public class FaixaRoxa extends ListFragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1, values);
 
+        ((MainActivity)getActivity()).populateNageWaza();
 
 
         sortAscending();
