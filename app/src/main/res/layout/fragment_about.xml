@@ -35,6 +35,16 @@
             android:id="@+id/about2"
             />
 
+
+
+        <com.devspark.robototextview.widget.RobotoTextView
+            style="@style/Wrap"
+            android:id="@+id/aboutAuthor"
+            android:layout_marginTop="@dimen/action_bar_height"
+            app:fontFamily="roboto"
+            android:textSize="@dimen/text_size_medium"
+            android:text="Versão 0.9 Beta 4"/>
+
         <com.devspark.robototextview.widget.RobotoTextView
                 style="@style/Wrap"
                 android:id="@+id/aboutAuthor"
@@ -51,31 +61,37 @@
                 android:text="@string/about_contact"/>
 
 
-        com.devspark.robototextview.widget.RobotoTextView
-                style="@style/Wrap"
-                android:id="@+id/aboutLibraries"
-                android:layout_marginTop="@dimen/action_bar_height"
-                app:fontFamily="roboto"
-                android:text="@string/about_libraries"/>
 
         <View android:layout_width="match_parent" android:layout_height="1px"
               android:background="@color/grey_font"></View>
 
-        com.devspark.robototextview.widget.RobotoTextView
-                style="@style/Wrap"
-                android:id="@+id/aboutButter"
-                android:layout_marginTop="@dimen/default_padding"
-                app:typeface="roboto_light"
-                android:text="@string/about_butterknife"/>
+        <LinearLayout
+            android:id="@+id/LinearLayout02"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_alignParentBottom="false"
+            android:background="@drawable/linearlayout_bg"
+            android:layout_alignParentRight="false"
+            android:layout_alignParentTop="false"
+            android:layout_alignParentLeft="false"
+            android:layout_alignWithParentIfMissing="false"
+            android:gravity="center_vertical|center">
+            <ImageView
+                android:layout_width="300dp"
+                android:padding="2dp"
+                android:layout_height="300dp"
+                android:id="@+id/imageView2"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/versiculo" />
 
-        com.devspark.robototextview.widget.RobotoTextView
-                style="@style/Wrap"
-                android:id="@+id/aboutTV"
-                android:layout_marginTop="@dimen/default_padding"
-                app:typeface="roboto_light"
-                android:text="@string/about_robototextview"/>
+
+
+        </LinearLayout>
 
 
     </LinearLayout>
+
+
 
 </ScrollView>

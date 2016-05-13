@@ -43,10 +43,11 @@ public class OsaekomiWaza extends ListFragment {
         String textonaposicao;
         Intent meuGolpe;
         textonaposicao = values[position];
-        Toast.makeText(getActivity().getApplicationContext(), textonaposicao, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity().getApplicationContext(), textonaposicao, Toast.LENGTH_SHORT).show();
         String nomelimpo;
         nomelimpo = textonaposicao.toLowerCase().replace(" ", "").replace("-", "");
         meuGolpe = new Intent(getActivity().getApplicationContext(), golpe.class);
+        meuGolpe.putExtra("nomedogolpe", textonaposicao);
         meuGolpe.putExtra("xmlfile", nomelimpo);
         startActivity(meuGolpe);
 

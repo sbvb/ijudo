@@ -51,7 +51,7 @@ public class golpe extends Activity {
             public void onClick(View arg0) {
 
                 Bundle extras = getIntent().getExtras();
-                String nomedogolpe = extras.getString("xmlfile");
+                String nomedogolpe = extras.getString("nomedogolpe");
                 Log.d("mytag", "detectei click no yourube");
                 Intent intent = new Intent(Intent.ACTION_SEARCH);
                 intent.setPackage("com.google.android.youtube");

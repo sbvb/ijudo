@@ -46,11 +46,12 @@ public class FaixaCinza extends ListFragment {
         String textonaposicao;
         Intent meuGolpe;
         textonaposicao = values[position];
-        Toast.makeText(getActivity().getApplicationContext(), textonaposicao, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity().getApplicationContext(), textonaposicao, Toast.LENGTH_SHORT).show();
         String nomelimpo;
         nomelimpo = textonaposicao.toLowerCase().replace(" ", "").replace("-", "");  //tira traços e espaços do nome do golpe, para referenciar o xml referente ao golpe
         meuGolpe = new Intent(getActivity().getApplicationContext(), golpe.class);
         meuGolpe.putExtra("xmlfile", nomelimpo);
+        meuGolpe.putExtra("nomedogolpe", textonaposicao);
         startActivity(meuGolpe);
 
     }

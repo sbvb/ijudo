@@ -48,5 +48,19 @@
         android:layout_above="@+id/LinearLayout02"
         android:layout_centerHorizontal="true" />
 
+    <Button
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:id="@+id/btnYoutube"
+        android:background="@drawable/youtubesmall"
+        android:layout_alignParentBottom="false"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentRight="true"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_alignParentTop="false"
+        android:layout_marginBottom="34dp"
+        android:layout_marginRight="34dp"
+        android:layout_above="@+id/LinearLayout02" />
 
 </RelativeLayout>

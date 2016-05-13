@@ -75,17 +75,16 @@
         <item>Uki-Goshi</item>
         <item>Ouchi-Gari</item>
         <item>Ko-Uchi-Gari</item>
-        <item>Ashi-Guruma</item>
+        <item>Ko-Soto-Gari</item>
     </string-array>
 
     <string-array name="golpeslaranja">
+        <item>Ashi-Guruma</item>
         <item>Tai-Otoshi</item>
         <item>Harai-Goshi</item>
         <item>Okuri-Ashi-Barai</item>
         <item>Harai-Tsuri-Komi-Ashi</item>
-        <item>Ko-Soto-Gari</item>
         <item>O-Guruma</item>
-        <item>Kata-Guruma</item>
     </string-array>
 
     <string-array name="golpesverde">
@@ -119,6 +118,7 @@
         <item>Yoko-Otoshi</item>
         <item>Ura-Nage</item>
         <item>Uki-Otoshi</item>
+        <item>Kata-Guruma</item>
 
     </string-array>
 
