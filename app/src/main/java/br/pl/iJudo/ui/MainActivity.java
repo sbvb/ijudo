@@ -325,7 +325,7 @@ public class MainActivity extends ActionBarActivity {
                     comnaguewaza = true; Log.d("myTag","acabei de setar para true na option1");
                     populateNageWaza();
                     Log.d("myTag", "option1");
-                    getSupportActionBar().setTitle("Nage-Waza");//set o titulo da janela !!!
+                    getSupportActionBar().setTitle("Nage Waza");//set o titulo da janela !!!
 
 
 
@@ -333,7 +333,7 @@ public class MainActivity extends ActionBarActivity {
                 else {
                     comnaguewaza = false;  Log.d("myTag","acabei de setar para false na option2");
                     populatesemNageWaza();
-                    getSupportActionBar().setTitle("Nague-Waza");//set o titulo da janela !!!
+                    getSupportActionBar().setTitle("Nage Waza");//set o titulo da janela !!!
 
 
                 }
@@ -481,6 +481,7 @@ public class MainActivity extends ActionBarActivity {
                     getSupportActionBar().setTitle(R.string.fragment_main);//set o titulo da janela !!!
 
                     mDrawerLayout.closeDrawer(mLinearDrawerLayout);
+
                     break;
 
                 case 1:

@@ -14,9 +14,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import br.pl.iJudo.R;
 import br.pl.iJudo.ui.golpe;
 import butterknife.ButterKnife;
-import br.pl.iJudo.R;
 
 public class FaixaAmarela extends ListFragment {
 
@@ -44,10 +44,16 @@ public class FaixaAmarela extends ListFragment {
         Intent meuGolpe;
         textonaposicao = values[position];
         Toast.makeText(getActivity().getApplicationContext(), textonaposicao, Toast.LENGTH_SHORT).show();
+
         String nomelimpo;
         nomelimpo = textonaposicao.toLowerCase().replace(" ", "").replace("-", "");
+
+
         meuGolpe = new Intent(getActivity().getApplicationContext(), golpe.class);
         meuGolpe.putExtra("xmlfile", nomelimpo);
+        meuGolpe.putExtra("nomedogolpe", textonaposicao);
+
+
         startActivity(meuGolpe);
 
     }
