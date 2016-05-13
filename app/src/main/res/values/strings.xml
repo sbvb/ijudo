@@ -40,7 +40,7 @@
 
 
     <string name="about_text">Este aplicativo foi desenvolvido para auxiliar alunos de Judô no treinamento de técnicas e golpes.</string>
-    <string name="about_text2">Para sugestôes e bugs, contacte o autor.</string>
+    <string name="about_text2">Para sugestões e bugs, contacte o autor.</string>
 
     <string name="about_author" translatable="false">Autor: Yuri Vidal</string>
     <string name="about_contact">Contato: yurividal+ijudo@gmail.com</string>
