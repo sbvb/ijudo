@@ -19,6 +19,7 @@ import java.util.List;
 
 import br.pl.iJudo.R;
 import br.pl.iJudo.ui.ColumnComparator;
+import br.pl.iJudo.ui.MainActivity;
 import butterknife.ButterKnife;
 
 public class Dicionario extends ListFragment {
@@ -36,6 +37,7 @@ public class Dicionario extends ListFragment {
                     false);
 
 
+            ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.dicionariotitle));
 
             //setContentView(R.layout.activity_statecapitals);
 

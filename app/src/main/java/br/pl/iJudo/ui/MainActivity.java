@@ -168,6 +168,9 @@ public class MainActivity extends ActionBarActivity {
 
         else if (getSupportFragmentManager().getFragments()
                     .get(0) instanceof Principal) {
+            Toast.makeText(MainActivity.this,
+                    "Soremadê", Toast.LENGTH_LONG).show();
+            //finish();
                 super.onBackPressed();
                 Log.d("myTag", "DETECTEI BACK BUTTON NO PRINCIPAL, VOU SAIR");
             }
@@ -294,6 +297,11 @@ public class MainActivity extends ActionBarActivity {
         if (mLinearDrawerLayout != null) {
             //mDrawerLayout.closeDrawer(mLinearDrawerLayout);
         }
+    }
+
+    public void setActionBarTitle(String title){
+        getSupportActionBar().setTitle(title); //set o titulo da janela !!!
+
     }
 
     private void onNavigationDrawerItemSelected(int position) {

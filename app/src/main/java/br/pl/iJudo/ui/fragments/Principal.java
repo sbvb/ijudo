@@ -48,8 +48,7 @@ public class Principal extends Fragment {
                 .replace(R.id.contentFrame, Fragment
                         .instantiate(getActivity().getApplicationContext(), Fragments.DICIONARIO.getFragment()))
                 .commit();
-        //Intent intent = new Intent(getActivity(), StateCapitalsActivity.class);
-        //startActivity(intent);
+
 
     }
 
