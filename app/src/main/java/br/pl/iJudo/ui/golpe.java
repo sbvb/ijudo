@@ -9,6 +9,9 @@ import android.view.View.OnClickListener;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 
 import br.pl.iJudo.R;
 
@@ -33,8 +36,11 @@ public class golpe extends Activity {
 
         int id = getResources().getIdentifier(xmlfile, "layout", getPackageName());
 
-
         setContentView(id);
+
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         addListenerOnButton();
 

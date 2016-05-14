@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import br.pl.iJudo.ui.MainActivity;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
@@ -48,6 +49,9 @@ public class FragmentAbout extends Fragment {
             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_about, containter, false);
         ButterKnife.inject(this, view);
+
+        ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.abouttitle));
+
         //setSpans();
         return view;
     }

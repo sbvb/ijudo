@@ -23,7 +23,11 @@
     <string name="golpes">Golpes</string>
     <string name="dicionario">Dicionário de Termos</string>
     <string name="dicionariotitle">Dicionário</string>
-    <string name="naosei">Algo Aqui</string>
+    <string name="abouttitle">Sobre</string>
+
+
+    <string name="banner_ad_unit_id">ca-app-pub-4283659742906361/4672414139</string>
+
 
 
     <string name="fragment">Fragment</string>
