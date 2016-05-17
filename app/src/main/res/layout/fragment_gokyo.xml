@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/textgokyo"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#FFFFFF"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:background="@color/my_awesome_color"
+        android:elegantTextHeight="true"
+        android:enabled="false"
+        android:fontFamily="@string/about_robototextview" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="409dp"
+        android:textColor="#FF0000"
+        android:layout_weight="1.12">
+    <!--android:background="#FF0000" -->
+
+
+</ListView>
+
+</LinearLayout>

@@ -20,10 +20,13 @@
     <string name="fragment_osaekomiwaza">Osaekomi Waza</string>
     <string name="fragment_kansetsuwaza">Kansetsu Waza</string>
     <string name="fragment_shimewaza">Shime Waza</string>
+    <string name="fragment_gokyo">GoKyo</string>
     <string name="golpes">Golpes</string>
     <string name="dicionario">Dicionário de Termos</string>
     <string name="dicionariotitle">Dicionário</string>
     <string name="abouttitle">Sobre</string>
+
+    <string name="textgokyo">O Gokyô, é o catálogo básico das técnicas de queda (Nage-Waza) do Judô, criado originalmente em 1895. Representam as 40 técnicas oficiais da Kodokan</string>
 
 
     <string name="banner_ad_unit_id">ca-app-pub-4283659742906361/4672414139</string>
@@ -169,6 +172,8 @@
         <item>Yoko-Otoshi</item>
         <item>Ura-Nage</item>
         <item>Uki-Otoshi</item>
+        <item>Sumi-Otoshi</item>
+
     </string-array>
 
     <string-array name="osaekomiwaza">
@@ -204,5 +209,48 @@
         <item>Gyaku-juji-jime</item>
     </string-array>
 
+    <string-array name="gokyo">
+        <item>De-Ashi-Barai</item>
+        <item>Hiza-Guruma</item>
+        <item>Sassae-Tsuri-Komi-Ashi</item>
+        <item>Uki-Goshi</item>
+        <item>O-soto-Gari</item>
+        <item>O-Goshi</item>
+        <item>Ouchi-Gari</item>
+        <item>Morote-Seoi-Nage</item>
+        <item>Ko-Soto-Gari</item>
+        <item>Ko-Uchi-Gari</item>
+        <item>Koshi-Guruma</item>
+        <item>Tsuri-Komi-Goshi</item>
+        <item>Okuri-Ashi-Barai</item>
+        <item>Tai-Otoshi</item>
+        <item>Harai-Goshi</item>
+        <item>Uchi-Mata</item>
+        <item>Ko-Soto-Gake</item>
+        <item>Tsuri-Goshi</item>
+        <item>Yoko-Otoshi</item>
+        <item>Ashi-Guruma</item>
+        <item>Hane-Goshi</item>
+        <item>Harai-Tsuri-Komi-Ashi</item>
+        <item>Tomoe-Nage</item>
+        <item>Kata-Guruma</item>
+        <item>Sumi-Gaeshi</item>
+        <item>Tani-Otoshi</item>
+        <item>Hane-Makikomi</item>
+        <item>Sukui-Nage</item>
+        <item>Utsuri-Goshi</item>
+        <item>O-Guruma</item>
+        <item>Soto-Makikomi</item>
+        <item>Uki-Otoshi</item>
+        <item>O-Soto-Guruma</item>
+        <item>Uki-Waza</item>
+        <item>Yoko-Wakare</item>
+        <item>Yoko-Guruma</item>
+        <item>Ushiro-Goshi</item>
+        <item>Ura-Nage</item>
+        <item>Sumi-Otoshi</item>
+        <item>Yoko-Gake</item>
+
+    </string-array>
 
 </resources>

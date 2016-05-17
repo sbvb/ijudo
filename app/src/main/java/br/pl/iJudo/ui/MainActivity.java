@@ -207,6 +207,7 @@ public class MainActivity extends ActionBarActivity {
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_roxa), R.drawable.ic_roxa, true));
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_marrom), R.drawable.ic_marrom, true));
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_todos), R.drawable.ic_preta, true));
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_gokyo), R.drawable.ic_preta, true));
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_osaekomiwaza), R.drawable.ic_b, false));
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_kansetsuwaza), R.drawable.ic_c, false));
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_shimewaza), R.drawable.ic_d, false));
@@ -428,6 +429,18 @@ public class MainActivity extends ActionBarActivity {
                 break;
 
                 case 10:
+                    if (!(getSupportFragmentManager().getFragments().get(0) instanceof Todos)) {
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.contentFrame, Fragment
+                                        .instantiate(MainActivity.this, Fragments.GOKYO.getFragment()))
+                                .commit();
+                    }
+                    getSupportActionBar().setTitle(R.string.fragment_gokyo);//set o titulo da janela !!!
+
+                    mDrawerLayout.closeDrawer(mLinearDrawerLayout);
+                    break;
+
+                case 11:
                     if (!(getSupportFragmentManager().getFragments()
                             .get(0) instanceof OsaekomiWaza)) {
                         getSupportFragmentManager().beginTransaction()
@@ -440,7 +453,7 @@ public class MainActivity extends ActionBarActivity {
                     mDrawerLayout.closeDrawer(mLinearDrawerLayout);
 
                     break;
-                case 11:
+                case 12:
                     if (!(getSupportFragmentManager().getFragments().get(0) instanceof KansetsuWaza)) {
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.contentFrame, Fragment
@@ -452,7 +465,7 @@ public class MainActivity extends ActionBarActivity {
                     mDrawerLayout.closeDrawer(mLinearDrawerLayout);
 
                     break;
-                case 12:
+                case 13:
                     if (!(getSupportFragmentManager().getFragments().get(0) instanceof ShimeWaza)) {
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.contentFrame, Fragment
