@@ -207,7 +207,7 @@ public class MainActivity extends ActionBarActivity {
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_roxa), R.drawable.ic_roxa, true));
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_marrom), R.drawable.ic_marrom, true));
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_todos), R.drawable.ic_preta, true));
-            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_gokyo), R.drawable.ic_preta, true));
+            navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_gokyo), R.drawable.japanflg, true));
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_osaekomiwaza), R.drawable.ic_b, false));
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_kansetsuwaza), R.drawable.ic_c, false));
             navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_shimewaza), R.drawable.ic_d, false));

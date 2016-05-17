@@ -9,10 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
 import br.pl.iJudo.R;
 import br.pl.iJudo.ui.golpe;
 import butterknife.ButterKnife;
@@ -33,8 +29,6 @@ public class Gokyo extends ListFragment {
                 android.R.layout.simple_list_item_1, values);
 
 
-
-        sortAscending();
         setListAdapter(adapter);
         return rootView;
 
@@ -60,11 +54,6 @@ public class Gokyo extends ListFragment {
 
     }
 
-    private void sortAscending () {
-        List<String> sortedGolpesList = Arrays.asList(values);
-        Collections.sort(sortedGolpesList);
-        values = (String[]) sortedGolpesList.toArray();
-    }
 
     @Override
     public void onDestroyView() {
