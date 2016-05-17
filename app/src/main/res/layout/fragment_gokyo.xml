@@ -22,20 +22,11 @@
         android:enabled="false"
         android:fontFamily="@string/about_robototextview" />
 
-    <ListView
-        android:id="@android:id/list"
+    <ExpandableListView
         android:layout_width="match_parent"
-        android:layout_height="409dp"
-        android:textColor="#FF0000"
-        android:layout_weight="1.12">
-    <!--android:background="#FF0000" -->
-
-
-</ListView>
-
-    <TwoLineListItem
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"></TwoLineListItem>
+        android:id="@+id/expandableListView"
+        android:layout_gravity="center_horizontal" />
+
 
 </LinearLayout>
