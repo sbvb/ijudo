@@ -58,9 +58,10 @@
         android:layout_alignParentRight="true"
         android:layout_alignWithParentIfMissing="false"
         android:layout_alignParentTop="false"
-        android:layout_marginBottom="34dp"
+        android:layout_marginBottom="68dp"
         android:layout_marginRight="34dp"
-        android:layout_above="@+id/LinearLayout02" />
+        android:layout_above="@+id/LinearLayout02"
+        android:clickable="true" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"

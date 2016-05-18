@@ -27,8 +27,18 @@
         android:layout_height="wrap_content"
         android:id="@+id/expandableListView"
         android:layout_gravity="center_horizontal"
-        android:childDivider="#ffffff"
-        android:textFilterEnabled="false" />
+        android:childDivider="#00ffffff"
+        android:textFilterEnabled="false"
+        android:headerDividersEnabled="false"
+        android:footerDividersEnabled="true"
+        android:paddingLeft="20dp"
+        android:longClickable="false"
+        android:paddingRight="20dp"
+        android:indicatorRight="20dp"
+        android:drawSelectorOnTop="false"
+        android:nestedScrollingEnabled="false"
+        android:smoothScrollbar="false"
+        android:divider="#00ffffff" />
 
 
 </LinearLayout>

@@ -1,6 +1,7 @@
 package br.pl.iJudo.ui.fragments;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ListView;
 import android.widget.SimpleExpandableListAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -18,6 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 import br.pl.iJudo.R;
+import br.pl.iJudo.ui.MySimpleExpandableListAdapter;
 import br.pl.iJudo.ui.golpe;
 import butterknife.ButterKnife;
 
@@ -85,26 +88,24 @@ public class Gokyo extends Fragment {
             }
         };
 
-        lv.setOnChildClickListener(occl);
+
+            lv.setOnChildClickListener(occl);
 
         // Set up our adapter
 
-        mAdapter = new SimpleExpandableListAdapter(
-                getActivity(),
-                groupData,
-                android.R.layout.simple_expandable_list_item_2,
-                new String[] { NAME, IS_EVEN },
-                new int[] { android.R.id.text1, android.R.id.text2 },
-                childData,
-                android.R.layout.simple_expandable_list_item_1,
-                new String[] { NAME, IS_EVEN },
-                new int[] { android.R.id.text1, android.R.id.text2 }
+        mAdapter = new MySimpleExpandableListAdapter(getActivity(),groupData,android.R.layout.simple_expandable_list_item_2,new String[] { NAME, IS_EVEN },new int[] { android.R.id.text1, android.R.id.text2 },
+                childData, android.R.layout.simple_expandable_list_item_2,new String[] { NAME, IS_EVEN },new int[] { android.R.id.text1, android.R.id.text2 }
+
         );
+
+
+
+
         lv.setAdapter(mAdapter);
 
     }
 
-    private String [][] Gokyu = { {"DAI-IKKYO", "Primeiro Gokyu"} , {"DAI-NIKYO", "Segundo Gokyo"} , {"DAI-SANKIO", "Terceiro Gokyo"}, {"DAI-YONKYO", "Quarto Gokyo"} , {"DAI-GOKYO", "Quinto Gokyo"} };
+    private String [][] Gokyu = { {"DAI-IKKYO", "Primeiro Gokyo"} , {"DAI-NIKYO", "Segundo Gokyo"} , {"DAI-SANKIO", "Terceiro Gokyo"}, {"DAI-YONKYO", "Quarto Gokyo"} , {"DAI-GOKYO", "Quinto Gokyo"} };
     private String golpesgokyu [][] = {
             {"De-Ashi-Barai",
                     "Hiza-Guruma",
@@ -158,6 +159,9 @@ public class Gokyo extends Fragment {
                     "Yoko-Gake"
             }
     };
+
+
+
 
 
 

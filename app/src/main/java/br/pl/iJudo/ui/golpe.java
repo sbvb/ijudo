@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.HapticFeedbackConstants;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.webkit.WebView;
@@ -51,6 +52,8 @@ public class golpe extends Activity {
 
         button = (Button) findViewById(R.id.btnYoutube);
 
+        button.setHapticFeedbackEnabled( true );
+
         button.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -58,14 +61,15 @@ public class golpe extends Activity {
 
                 Bundle extras = getIntent().getExtras();
                 String nomedogolpe = extras.getString("nomedogolpe");
+                button.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
                 Log.d("mytag", "detectei click no yourube");
                 Intent intent = new Intent(Intent.ACTION_SEARCH);
                 intent.setPackage("com.google.android.youtube");
                 intent.putExtra("query", nomedogolpe);
-                Log.d("mytag", nomedogolpe);
 
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
+
 
             }
 
