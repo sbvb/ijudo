@@ -93,8 +93,8 @@ public class Gokyo extends Fragment {
 
         // Set up our adapter
 
-        mAdapter = new MySimpleExpandableListAdapter(getActivity(),groupData,android.R.layout.simple_expandable_list_item_2,new String[] { NAME, IS_EVEN },new int[] { android.R.id.text1, android.R.id.text2 },
-                childData, android.R.layout.simple_expandable_list_item_2,new String[] { NAME, IS_EVEN },new int[] { android.R.id.text1, android.R.id.text2 }
+        mAdapter = new MySimpleExpandableListAdapter(getActivity(),groupData,R.layout.simple_expandable_list_item_2_dicionario,new String[] { NAME, IS_EVEN },new int[] { R.id.texttitle1, R.id.texttitle2 },
+                childData, R.layout.simple_expandable_list_item_2_dicionario,new String[] { NAME, IS_EVEN },new int[] { R.id.textchild, R.id.texttitle2 }
 
         );
 

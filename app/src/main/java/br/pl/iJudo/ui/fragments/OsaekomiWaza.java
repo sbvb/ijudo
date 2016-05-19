@@ -30,7 +30,7 @@ public class OsaekomiWaza extends ListFragment {
 
         values = getResources().getStringArray(R.array.osaekomiwaza);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_list_item_1, values);
+                R.layout.simple_list_item_1_golpes, values);
 
         sortAscending();
         setListAdapter(adapter);

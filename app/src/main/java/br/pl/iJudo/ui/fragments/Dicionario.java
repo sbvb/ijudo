@@ -1,19 +1,14 @@
 package br.pl.iJudo.ui.fragments;
 
-import android.app.ListActivity;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SearchView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -33,43 +28,43 @@ public class Dicionario extends ListFragment {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.activity_statecapitals, container,
+            View rootView = inflater.inflate(R.layout.fragment_dicionario, container,
                     false);
 
 
             ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.dicionariotitle));
 
-            //setContentView(R.layout.activity_statecapitals);
 
-           Arrays.sort(StatesAndCapitals, new ColumnComparator(0));
+            Arrays.sort(termos, new ColumnComparator(0));
 
-
-            //HashMap links each line of data to the correct TextView
 
             HashMap<String,String> item;
 
-            for(int i=0;i<StatesAndCapitals.length;i++){
+            for(int i = 0; i< termos.length; i++){
                 item = new HashMap<String,String>();
-                item.put( "line1", StatesAndCapitals[i][0]);
-                item.put( "line2", StatesAndCapitals[i][1]);
+                item.put( "line1", termos[i][0]);
+                item.put( "line2", termos[i][1]);
                 list.add( item );
             }
 
-            sa = new SimpleAdapter(getActivity().getApplicationContext(), list,
-                    R.layout.my_two_lines,
-                    new String[] { "line1","line2" },
-                    new int[] {R.id.line_a, R.id.line_b});
-
-
+            sa = new SimpleAdapter(getActivity().getApplicationContext(), list, R.layout.my_two_lines, new String[] { "line1","line2" }, new int[] {R.id.line_a, R.id.line_b});
             setListAdapter(sa);
+
+
             return rootView;
             //setListShown(true);
+
+
+
+
         }
 
-        private String[][] StatesAndCapitals =
-                {{"DOJÔ","Academia (Area de Treinamento)"},
-                        {"JÔ-SEKI","Lugar onde se sentam as autoridades (ao lado do altar)"},
-                        {"REI-HÔ","Saudação ( Maneira de Cumprimento)"},
+
+
+        private String[][] termos =
+                {{"DOJÔ","Área de Treinamento"},
+                        {"JÔ-SEKI","Lugar onde se sentam as autoridades"},
+                        {"REI-HÔ","Saudação"},
                         {"REI","Cumprimento"},
                         {"MOKUSO","Meditação (Fechar os olhos e manter  silêncio)"},
                         {"ZA-REI","Cumprimento ajoelhado"},
@@ -78,8 +73,8 @@ public class Dicionario extends ListFragment {
                         {"SENSEI","Professor"},
                         {"SEITÔ","Aluno"},
                         {"DÔO-HAI","Colegas"},
-                        {"NINTAI","Perserverança (paciência)"},
-                        {"DORYOKU","Esforço (empenho)"},
+                        {"NINTAI","Perserverança"},
+                        {"DORYOKU","Esforço, empenho"},
                         {"HISSHYÔ","Ei de vencer"},
                         {"KATANÁ","Espada"},
                         {"DAITÔO","Espada Maior"},
@@ -100,7 +95,7 @@ public class Dicionario extends ListFragment {
                         {"ANATA","Senhor (ou Senhora)"},
                         {"KIMI","Você"},
                         {"WATAKUSHI","Eu"},
-                        {"BOKU","Eu  (Masculino)"},
+                        {"BOKU","Eu"},
                         {"OHAYÔ-GOZAIMASU","Bom Dia"},
                         {"KON-NITI-WA","Boa Tarde"},
                         {"KON-BAN-WA","Boa Noite"},
@@ -164,20 +159,19 @@ public class Dicionario extends ListFragment {
                         {"KAKATO","Calcanhar"},
                         {"SUNÊ","Canela"},
                         {"KIBISU","Calcanhar"},
-                        {"AKILES","Tendão de Aquiles"},
                         {"ASHI","Pé"},
                         {"ASHI","Perna"},
                         {"KURUBUSHI","Tornozelo"},
                         {"ASHI-NO-URA","Sola do Pé"},
                         {"ASHI-NO-YUBI","Dedo do Pé"},
                         {"ASHI-NO-KÔ","Dorso do Pé"},
-                        {"KARADa","Corpo"},
+                        {"KARADA","Corpo"},
                         {"HARA","Ventre"},
-                        {"TÊ-UTI-UKEKI","Queda à batida de mão"},
-                        {"ZEMPÔ-KAITEM-UKEMI","Queda com giro frontal"},
-                        {"MAE-UKEMI","Queda frontal"},
-                        {"YOKÔ-UKEMI","Queda ao lado"},
-                        {"USHIRO-UKEMI","Queda de costas"},
+                        {"TÊ-UTI-UKEKI","Queda e batida de mão"},
+                        {"ZEMPÔ-KAITEM-UKEMI","Amortecimento de queda com giro frontal"},
+                        {"MAE-UKEMI","Amortecimento de queda frontal"},
+                        {"YOKO-UKEMI","Amortecimento de queda de lado"},
+                        {"USHIRO-UKEMI","Amortecimento de queda de costas"},
                         {"ZAI","Posição sentado"},
                         {"ZEI-ZÁ","Ajoelhado"},
                         {"KYOSHY","Apenas uma perna ajoelhada"},
@@ -223,15 +217,15 @@ public class Dicionario extends ListFragment {
                         {"DYU-DAN","10º Grau"},
                         {"TATAMI","Acolchoado"},
                         {"ZÔRI","Chinelo"},
-                        {"KIMONO (ou JUDOGUI)","Roupa de Judô"},
+                        {"KIMONO","Tipo de Vestimenta típica do Japão"},
+                        {"JUDOGUI","Roupa usada na prática do Judô"},
                         {"OBI","Faixa"},
-                        {"ZUBON (SHITABAKI)","Calça"},
+                        {"SHITABAKI","Calça"},
                         {"HIMÔ","Fio"},
                         {"ERI","Gola"},
                         {"NAKAERI","Meio da Gola"},
                         {"OKU–ERI","Fundo da Gola"},
                         {"USHIRO–ERI","Atrás da Gola"},
-                        {"MON–DONKORÔ","10 cm abaixo da gola atrás"},
                         {"UÊ","Acima"},
                         {"SHITÁ","Abaixo"},
                         {"KAMI","Acima"},
@@ -245,20 +239,20 @@ public class Dicionario extends ListFragment {
                         {"ZEMPÔ","Parte Frontal"},
                         {"UTIKOMI-RENSHU","Treinamento de Técnicas"},
                         {"KATA(KIHON-RENSHU)","Treinamento de Base"},
-                        {"RANDORI (JIYÚ-RENSHU)","Treino Livre"},
+                        {"RANDORI","Treino Livre"},
                         {"KANGUEIKO","Treino de Inverno"},
                         {"SHOTSUGUEIKO","Treino de Verão"},
                         {"HARI-SOKE-GUEIKO","Ataque Combinado"},
                         {"HYAPPON-GUEIKO","Treinamento com Queda"},
                         {"SHIAI-GUEIKO","Treinamento de Disputa"},
-                        {"RENRAKU-RENKA-WASA","Técnica de Sequência"},
+                        {"RENRAKU-RENKA-WASA","Técnicas em Sequência"},
                         {"MAE-OBI","Frente da Faixa"},
                         {"YOKÔ-OBI","Lado da Faixa"},
                         {"USHIRO-OBI","Atrás da Faixa"},
                         {"KAESHI-WAZA","Contra-Ataque"},
                         {"KUZUSHI","Desequilibrio"},
                         {"TSUKURI","Preparo"},
-                        {"KAKÊ","Projeção (Executar)"},
+                        {"KAKÊ","Projeção"},
                         {"MIGUI","Direita"},
                         {"HIDARI","Esquerda"},
                         {"OMOTÊ","Frente"},
@@ -273,7 +267,7 @@ public class Dicionario extends ListFragment {
                         {"RYO-TÊ","Duas Mãos"},
                         {"KATA-TÊ","Uma Mão"},
                         {"WIKI","Puchada"},
-                        {"SHIBORI","Apertar (torcer)"},
+                        {"SHIBORI","Apertar, torcer"},
                         {"SEISHIN","Espírito"},
                         {"SHIN-SHIN","Espírito e Físico (corpo)"},
                         {"MATE" , "Parar"},

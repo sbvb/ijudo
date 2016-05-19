@@ -31,6 +31,7 @@
             android:padding="0dp"
             android:layout_margin="20dp"
             android:text="@string/golpes"
+            android:textSize="12dp"
             android:textColor="@color/white"
             android:background="@color/my_awesome_color">
         </Button>
@@ -43,6 +44,7 @@
             android:padding="12dp"
             android:layout_margin="20dp"
             android:text="@string/dicionario"
+            android:textSize="12dp"
             android:textColor="@color/white"
             android:background="@color/my_awesome_color">
         </Button>
