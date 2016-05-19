@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -32,7 +30,8 @@ public class FaixaAzul extends ListFragment {
         values = getResources().getStringArray(R.array.golpesazul);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-                R.layout.simple_list_item_1_golpes, values);
+                R.layout.simple_list_item_1_golpes_azul, R.id.golpename, values);
+
 
         sortAscending();
         setListAdapter(adapter);

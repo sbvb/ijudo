@@ -32,6 +32,7 @@ import br.pl.iJudo.ui.fragments.FaixaMarrom;
 import br.pl.iJudo.ui.fragments.FaixaRoxa;
 import br.pl.iJudo.ui.fragments.FaixaVerde;
 import br.pl.iJudo.ui.fragments.FragmentAbout;
+import br.pl.iJudo.ui.fragments.Gokyo;
 import br.pl.iJudo.ui.fragments.KansetsuWaza;
 import br.pl.iJudo.ui.fragments.OsaekomiWaza;
 import br.pl.iJudo.ui.fragments.Principal;
@@ -429,7 +430,7 @@ public class MainActivity extends ActionBarActivity {
                 break;
 
                 case 10:
-                    if (!(getSupportFragmentManager().getFragments().get(0) instanceof Todos)) {
+                    if (!(getSupportFragmentManager().getFragments().get(0) instanceof Gokyo)) {
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.contentFrame, Fragment
                                         .instantiate(MainActivity.this, Fragments.GOKYO.getFragment()))

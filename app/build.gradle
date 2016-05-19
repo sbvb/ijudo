@@ -14,8 +14,8 @@ android {
         applicationId "br.pl.iJudo"
         minSdkVersion 14
         targetSdkVersion 21
-        versionName '0.9 beta 6'
-        versionCode 6
+        versionName '0.9 beta 7'
+        versionCode 7
     }
     lintOptions {
         disable 'InvalidPackage'
@@ -57,8 +57,5 @@ dependencies {
     compile 'com.jakewharton.timber:timber:2.5.0'
     compile 'com.github.johnkil.android-robototextview:robototextview:2.2.0'
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.+'
-    compile 'com.android.support:appcompat-v7:21.0.+'
-    compile 'com.android.support:support-v4:18.0.0'
     compile 'com.google.android.gms:play-services-ads:8.4.0'
-
 }

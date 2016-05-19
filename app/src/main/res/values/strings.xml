@@ -250,6 +250,11 @@
         <item>Ura-Nage</item>
         <item>Sumi-Otoshi</item>
         <item>Yoko-Gake</item>
+    </string-array>
+
+    <string-array name="dicionario">
+        <item>{"line1":"REI-HÔ","line2":"12345"}</item>
+        <item>{"line1":"REI-HÔ2","line2":"12345222"}</item>
 
     </string-array>
 

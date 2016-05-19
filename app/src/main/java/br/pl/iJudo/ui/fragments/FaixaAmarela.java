@@ -30,8 +30,9 @@ public class FaixaAmarela extends ListFragment {
                 false);
 
         values = getResources().getStringArray(R.array.golpesamarela);
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-                R.layout.simple_list_item_1_golpes, values);
+                R.layout.simple_list_item_1_golpes_amarela, R.id.golpename, values);
 
 
         sortAscending();

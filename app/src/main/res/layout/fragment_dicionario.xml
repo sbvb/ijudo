@@ -10,17 +10,15 @@
       android:layout_height="wrap_content"
       android:iconifiedByDefault="false"
       android:padding="2dp"
-      android:queryHint="Search...." />
+      android:queryHint="Search...."
+      android:visibility="gone" />
 
   <ListView android:layout_height="wrap_content"
     android:layout_width="fill_parent"
     android:id="@+id/android:list"
-    android:divider="#00ffffff"/>
-
-  <TextView android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/hello"
-  />
+    android:divider="#00ffffff"
+      android:clickable="false"
+      android:choiceMode="none" />
 
 
 </LinearLayout>
