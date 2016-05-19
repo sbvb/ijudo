@@ -9,7 +9,16 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/grey_background"
-    android:gravity="clip_horizontal|clip_vertical|fill">
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:padding="12dp"
+        android:layout_height="300dp"
+        android:id="@+id/imageView2"
+        android:src="@drawable/jigorokano"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <LinearLayout
         android:id="@+id/LinearLayout"
@@ -51,28 +60,6 @@
         </Button>
     </LinearLayout>
 
-
-    <LinearLayout
-        android:id="@+id/LinearLayout02"
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:layout_alignParentBottom="false"
-        android:background="@drawable/linearlayout_bg"
-        android:layout_alignParentRight="false"
-        android:layout_alignParentTop="false"
-        android:layout_alignParentLeft="false"
-        android:layout_alignWithParentIfMissing="false"
-        android:gravity="center_vertical|center|clip_vertical|start">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:padding="12dp"
-            android:layout_height="300dp"
-            android:id="@+id/imageView2"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/jigorokano" />
-
-    </LinearLayout>
 
 
 

@@ -10,7 +10,6 @@ import android.widget.SimpleAdapter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
 import br.pl.iJudo.R;
 import br.pl.iJudo.ui.ColumnComparator;
@@ -20,9 +19,8 @@ import butterknife.ButterKnife;
 public class Dicionario extends ListFragment {
 
 
-        //ArrayList holds the data (as HashMaps) to load into the ListView
         ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String,String>>();
-        //SimpleAdapter does the work to load the data in to the ListView
+
         private SimpleAdapter sa;
 
         @Override
@@ -47,13 +45,13 @@ public class Dicionario extends ListFragment {
                 list.add( item );
             }
 
-            sa = new SimpleAdapter(getActivity().getApplicationContext(), list, R.layout.my_two_lines, new String[] { "line1","line2" }, new int[] {R.id.line_a, R.id.line_b});
+            sa = new SimpleAdapter(getActivity().getApplicationContext(), list, R.layout.dicionario_two_lines, new String[] { "line1","line2" }, new int[] {R.id.line_a, R.id.line_b});
+
+
             setListAdapter(sa);
 
 
             return rootView;
-            //setListShown(true);
-
 
 
 
