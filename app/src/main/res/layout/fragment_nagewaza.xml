@@ -23,23 +23,15 @@
                 android:id="@+id/aboutAuthor"
                 android:layout_marginTop="@dimen/action_bar_height"
                 app:fontFamily="roboto"
-                android:textSize="@dimen/text_size_medium"
-                android:text="@string/welcome"/>
+                android:textSize="@dimen/text_size_medium"/>
 
         <com.devspark.robototextview.widget.RobotoTextView
                 style="@style/Wrap"
                 android:id="@+id/aboutContact"
                 app:typeface="roboto_light"
-                android:textSize="@dimen/text_size_medium"
-                android:text="@string/texto_principal2"/>
+                android:textSize="@dimen/text_size_medium"/>
 
 
-        com.devspark.robototextview.widget.RobotoTextView
-                style="@style/Wrap"
-                android:id="@+id/aboutLibraries"
-                android:layout_marginTop="@dimen/action_bar_height"
-                app:fontFamily="roboto"
-                android:text="@string/about_libraries"/>
 
         <View android:layout_width="match_parent" android:layout_height="1px"
               android:background="@color/grey_font"></View>

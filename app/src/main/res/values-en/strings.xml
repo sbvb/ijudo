@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">iJudo</string>
+    <string name="about_author">Author: Yuri Vidal</string>
+    <string name="about_contact">Contact: yurividal+ijudo@gmail.com</string>
+    <string name="about_text">This app has been developed to hap Judo students in their practice of judo Techniques</string>
+    <string name="about_text2">For suggestions and bug reports, please contact the author.</string>
+    <string name="abouttitle">About</string>
+    <string name="action_about">About</string>
+    <string name="action_sair">Exit</string>
+    <string name="dicionario">Judo Dictionary</string>
+    <string name="dicionariotitle">Dictionary</string>
+    <string name="fragment_amarela">Yellow</string>
+    <string name="fragment_azul">Blue</string>
+    <string name="fragment_cinza">Grey</string>
+    <string name="fragment_laranja">Orange</string>
+    <string name="fragment_main">Home</string>
+    <string name="fragment_marrom">Brown</string>
+    <string name="fragment_roxa">Purple</string>
+    <string name="fragment_todos">All</string>
+    <string name="fragment_verde">Green</string>
+    <string name="golpes">Techniques</string>
+    <string name="select_faixa">Select your Grade</string>
+    <string name="textgokyo">Gokyo is the basic set of throws (Nage-Waza) in judo, originally created in 1895. It represents the 40 original techniques of Kodokan</string>
+</resources>

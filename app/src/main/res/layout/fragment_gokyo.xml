@@ -19,8 +19,7 @@
         android:paddingRight="20dp"
         android:background="@color/my_awesome_color"
         android:elegantTextHeight="true"
-        android:enabled="false"
-        android:fontFamily="@string/about_robototextview" />
+        android:enabled="false"></TextView>
 
     <ExpandableListView
         android:layout_width="match_parent"
