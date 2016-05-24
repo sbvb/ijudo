@@ -58,4 +58,5 @@ dependencies {
     compile 'com.github.johnkil.android-robototextview:robototextview:2.2.0'
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.+'
     compile 'com.google.android.gms:play-services-ads:8.4.0'
+    compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
 }
