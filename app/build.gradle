@@ -14,8 +14,8 @@ android {
         applicationId "br.pl.iJudo"
         minSdkVersion 14
         targetSdkVersion 21
-        versionName '0.9 beta 7'
-        versionCode 7
+        versionName '2.0'
+        versionCode 9
     }
     lintOptions {
         disable 'InvalidPackage'

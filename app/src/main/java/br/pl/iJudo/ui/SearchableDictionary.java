@@ -261,6 +261,8 @@ public class SearchableDictionary extends ActionBarActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        //getSupportActionBar().
+
         //DbBackend dbBackend = new DbBackend(SearchableDictionary.this);
 
 
