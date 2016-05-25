@@ -249,8 +249,6 @@ public class SearchableDictionary extends ActionBarActivity {
     ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String,String>>();
     private SimpleAdapter sa;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -258,6 +256,10 @@ public class SearchableDictionary extends ActionBarActivity {
 
         filterText = (EditText)findViewById(R.id.editText);
         ListView itemList = (ListView)findViewById(R.id.listView);
+
+        getSupportActionBar().setTitle(R.string.dicionariotitle);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //DbBackend dbBackend = new DbBackend(SearchableDictionary.this);
 
@@ -310,8 +312,22 @@ public class SearchableDictionary extends ActionBarActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.menu_dictionary, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // app icon in action bar clicked; go home
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 

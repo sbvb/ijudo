@@ -263,4 +263,6 @@
     <string name="title_activity_dictionary">DictionaryActivity</string>
     <string name="text_to_speech">Convert Text to Speech</string>
 
+    <string name="Procurar">Procurar...</string>
+
 </resources>

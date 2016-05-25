@@ -3,8 +3,10 @@ package br.pl.iJudo.ui;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.HapticFeedbackConstants;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.webkit.WebView;
@@ -16,7 +18,7 @@ import com.google.android.gms.ads.AdView;
 
 import br.pl.iJudo.R;
 
-public class golpe extends Activity {
+public class golpe extends ActionBarActivity {
 
     WebView webviewActionView;
     Button button;
@@ -28,6 +30,11 @@ public class golpe extends Activity {
         super.onCreate(savedInstanceState);
 
         Bundle extras = getIntent().getExtras();
+        String title = extras.getString("nomedogolpe");
+        getSupportActionBar().setTitle(title);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //Bundle extras = getIntent().getExtras();
         String xmlfile = null;
         if (extras != null) {
             xmlfile = extras.getString("xmlfile");
@@ -85,6 +92,21 @@ public class golpe extends Activity {
         }
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+               // // app icon in action bar clicked; go home
+               // Intent intent = new Intent(this, MainActivity.class);
+               // intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               // startActivity(intent);
+                finish();
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
 
 }

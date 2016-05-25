@@ -19,7 +19,7 @@ import br.pl.iJudo.R;
 
 public class Todos extends ListFragment {
 
-    private String[] values, cinza, azul;
+    private String[] values;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
